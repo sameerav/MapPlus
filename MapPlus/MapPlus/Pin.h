@@ -25,4 +25,6 @@
 
 + (NSString *)parseClassName;
 
++ (void)registerSubclass;
+
 @end

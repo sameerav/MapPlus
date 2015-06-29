@@ -35,4 +35,8 @@
     return self;
 }
 
++ (void)registerSubclass {
+    [self registerSubclass];
+}
+
 @end
