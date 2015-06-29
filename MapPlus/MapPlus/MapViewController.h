@@ -10,6 +10,6 @@
 #import <CoreLocation/CoreLocation.h>
 @import GoogleMaps;
 
-@interface MapViewController : UIViewController<GMSMapViewDelegate, CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <GMSMapViewDelegate, CLLocationManagerDelegate>
 
 @end
