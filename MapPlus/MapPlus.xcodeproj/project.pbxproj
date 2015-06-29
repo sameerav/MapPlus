@@ -16,6 +16,8 @@
 		4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D31B41C7E000376356 /* MapViewController.m */; };
 		4CC5A4D61B41C7E000376356 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D41B41C7E000376356 /* MapViewController.xib */; };
 		6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BAA90BA30D8351301FD24 /* libPods.a */; };
+		EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90A1B41C7680030BF12 /* ParseAPI.m */; };
+		EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90D1B41C79C0030BF12 /* Pin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,11 @@
 		B26BAA90BA30D8351301FD24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE052377F7F0A0AEF5CC5D0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E18CCDB4F6B33213DB24D09A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA56C9091B41C7680030BF12 /* ParseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseAPI.h; sourceTree = "<group>"; };
+		EA56C90A1B41C7680030BF12 /* ParseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseAPI.m; sourceTree = "<group>"; };
+		EA56C90C1B41C79C0030BF12 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
+		EA56C90D1B41C79C0030BF12 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +99,10 @@
 			children = (
 				4CC5A4B01B41C2F500376356 /* AppDelegate.h */,
 				4CC5A4B11B41C2F500376356 /* AppDelegate.m */,
+				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
+				EA56C90C1B41C79C0030BF12 /* Pin.h */,
+				EA56C90D1B41C79C0030BF12 /* Pin.m */,
+				EA56C90A1B41C7680030BF12 /* ParseAPI.m */,
 				4CC5A4B61B41C2F500376356 /* Main.storyboard */,
 				4CC5A4B91B41C2F500376356 /* Images.xcassets */,
 				4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */,
@@ -285,6 +296,8 @@
 				4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */,
 				4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */,
 				4CC5A4AF1B41C2F500376356 /* main.m in Sources */,
+				EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */,
+				EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
