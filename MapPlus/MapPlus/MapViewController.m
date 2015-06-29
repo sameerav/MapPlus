@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "FilterViewController.h"
 @import GoogleMaps;
+#import "CreatePinViewController.h"
 
 @interface MapViewController ()
 
@@ -116,7 +117,10 @@
 - (void)mapView:(GMSMapView *)mapView
 didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    // Should present AddPinScreen modally
+    CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
+    
+    [self presentViewController:nc animated:YES completion:nil];
     
     GMSMarker *marker = [[GMSMarker alloc] init];
 

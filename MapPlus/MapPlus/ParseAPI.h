@@ -19,6 +19,6 @@
 
 
 // methods to store pins
-- (BOOL) savePin:(Pin *)pin;
++ (BOOL) savePin:(Pin *)pin;
 
 @end

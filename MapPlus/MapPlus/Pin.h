@@ -12,6 +12,10 @@
 
 @interface Pin : NSObject
 
+- (instancetype)initWithUser:(NSNumber *)userID
+                        date:(NSDate *)date
+                    location:(CLLocationCoordinate2D)position;
+
 @property (strong, nonatomic) UIColor *color;
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) CLLocationCoordinate2D position;
