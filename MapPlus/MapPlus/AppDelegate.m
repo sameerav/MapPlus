@@ -17,6 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Initialize GoogleMaps with API key
+    [GMSServices provideAPIKey:@"AIzaSyDDKPChzynlDv-f8NTFmxks_NLWJDvl34o"];
+    
+    // Set up Parse
     [self doParseSetup: launchOptions];
     return YES;
 }
