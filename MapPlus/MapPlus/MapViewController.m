@@ -114,9 +114,10 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
     [self presentViewController:nc animated:YES completion:nil];
-    
+
     GMSMarker *marker = [[GMSMarker alloc] init];
 
+    marker.icon = [GMSMarker markerImageWithColor:cpvc.color];
     marker.position = coordinate;
     marker.title = @"Gratuitously titled things";
     marker.snippet = @"Hello World";

@@ -24,6 +24,11 @@
     self = [super init];
     if (self) {
         _location = location;
+        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                    target:self
+                                                                                    action:@selector(cancel:)];
+        self.navigationItem.leftBarButtonItem = cancelItem;
+        self.navigationItem.title = @"Drop a New Pin";
     }
     return self;
 }
@@ -51,46 +56,52 @@
 - (IBAction)addRedPin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor redColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addOrangePin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor orangeColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addYellowPin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor yellowColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addGreenPin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor greenColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addBluePin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor blueColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addPurplePin:(id)sender {
     Pin *pin = self.createPin;
     pin.color = [UIColor purpleColor];
-    [ParseAPI savePin:pin];
+    //[ParseAPI savePin:pin];
+    self.color = pin.color;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)cancel:(id)sender {
+- (void)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

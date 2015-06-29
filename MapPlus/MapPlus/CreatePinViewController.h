@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 @import GoogleMaps;
 
-@interface CreatePinViewController : UIViewController <UINavigationControllerDelegate>
+@interface CreatePinViewController : UIViewController
+
+@property (weak, nonatomic) UIColor *color;
+@property (nonatomic) BOOL tag;
 
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location;
 - (IBAction)addRedPin:(id)sender;

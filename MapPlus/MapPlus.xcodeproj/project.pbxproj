@@ -14,7 +14,6 @@
 		4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */; };
 		4CC5A4C91B41C2F500376356 /* MapPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4C81B41C2F500376356 /* MapPlusTests.m */; };
 		4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D31B41C7E000376356 /* MapViewController.m */; };
-		6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BAA90BA30D8351301FD24 /* libPods.a */; };
 		A67B35821B41ECD800D5CF43 /* CreatePinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67B35801B41ECD800D5CF43 /* CreatePinViewController.m */; };
 		A67B35831B41ECD800D5CF43 /* CreatePinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67B35811B41ECD800D5CF43 /* CreatePinViewController.xib */; };
 		EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90A1B41C7680030BF12 /* ParseAPI.m */; };
@@ -63,7 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBDD6C51B41ECC7009806D4 /* CoreLocation.framework in Frameworks */,
-				6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
