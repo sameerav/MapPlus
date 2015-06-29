@@ -11,6 +11,9 @@
 
 @interface MapViewController ()
 
+@property (strong, nonatomic) GMSMapView *mapView;
+@property (strong, nonatomic) NSMutableDictionary *pins;
+
 @end
 
 @implementation MapViewController
@@ -20,6 +23,8 @@
     self = [super init];
     
     if (self) {
+        self.pins = [NSMutableDictionary dictionary];
+        
         self.navigationItem.title = @"MapPlus";
         
         UIBarButtonItem *filterPinButton =
@@ -28,13 +33,27 @@
                                         target:self
                                         action:@selector(filterPinButtonPressed:)];
         
-        UIBarButtonItem *addPinButton =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                      target:self
-                                                      action:@selector(addPinButtonPressed:)];
-        
         self.navigationItem.leftBarButtonItem = filterPinButton;
-        self.navigationItem.rightBarButtonItem = addPinButton;
+        
+        // Initialize mapView
+        double fbLatitude = 37.4844666;
+        double fbLongitude = -122.1479385;
+        int fbZoomLevel = 16;
+        
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:fbLatitude
+                                                                longitude:fbLongitude
+                                                                     zoom:fbZoomLevel];
+        
+        GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+        
+        mapView.delegate = self;
+        
+        // Set the mapType to a drawn representation
+        mapView.mapType = kGMSTypeNormal;
+        
+        
+        self.mapView = mapView;
+        self.view = mapView;
     }
     
     return self;
@@ -43,32 +62,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    double fbLatitude = 37.4844666;
-    double fbLongitude = -122.1479385;
-    int fbZoomLevel = 16;
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:fbLatitude
-                                                            longitude:fbLongitude
-                                                                 zoom:fbZoomLevel];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    
-    // Available map types: kGMSTypeNormal, kGMSTypeSatellite, kGMSTypeHybrid,
-    // kGMSTypeTerrain, kGMSTypeNone
-    
-    // Set the mapType to Satellite
-    mapView.mapType = kGMSTypeNormal;
-    self.view = mapView;
 }
+
+// Mark - Button Press Methods
 
 - (void)filterPinButtonPressed:(id)sender
 {
     NSLog(@"Filter Pin Button Pressed");
+    
+    CLLocationDegrees latit = 0;
+    CLLocationDegrees longit = 0;
+    
+    [self.mapView animateToLocation:CLLocationCoordinate2DMake(latit, longit)];
 }
 
-- (void)addPinButtonPressed:(id)sender
+// Mark - GMSMapViewDelegate Methods
+
+- (void)mapView:(GMSMapView *)mapView
+didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    NSLog(@"Add Pin Button Pressed");
-}
+    // Should present AddPinScreen modally
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
 
+    marker.position = coordinate;
+    marker.title = @"Gratuitously titled things";
+    marker.snippet = @"Hello World";
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.map = self.mapView;
+}
 
 @end

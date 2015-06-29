@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+@import GoogleMaps;
 
 @interface Pin : NSObject
 @property UIColor *color;
 @property NSDate *date;
-@property NSNumber *latitude;
-@property NSNumber *longitude;
+@property CLLocationCoordinate2D position;
 @property NSNumber *userID;
 @property NSString *text;
 @end
