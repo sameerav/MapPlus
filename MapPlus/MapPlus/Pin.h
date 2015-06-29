@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+@import GoogleMaps;
 
 @interface Pin:PFObject<PFSubclassing>
-@property UIColor *color;
-@property NSDate *date;
-@property NSNumber *latitude;
-@property NSNumber *longitude;
-@property NSNumber *userID;
-@property NSString *text;
+@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSDate *date;
+@property (assign, nonatomic) CLLocationCoordinate2D position;
+@property (strong, nonatomic) NSNumber *userID;
+@property (strong, nonatomic) NSString *text;
 
 + (NSString *)parseClassName;
 @end

@@ -14,8 +14,7 @@
 // necessary because Pin subclasses Parse's PFObject
 @dynamic color;
 @dynamic date;
-@dynamic latitude;
-@dynamic longitude;
+@dynamic position;
 @dynamic userID;
 @dynamic text;
 

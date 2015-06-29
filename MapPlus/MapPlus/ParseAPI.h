@@ -20,6 +20,6 @@
 - (NSSet *) getPinsFromDate: (NSDate *)startDate toDate:(NSDate *)endDate;
 
 // methods to store pins
-- (BOOL) savePin:(Pin *)pin;
++ (BOOL) savePin:(Pin *)pin;
 
 @end

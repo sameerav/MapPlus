@@ -46,8 +46,8 @@
 - (NSSet *) getPinsAllTime
 {
     //implement this
-    PF_NULLABLE NSArray *pinArray = [NSArray array];
-    [Parse fetchAll:pinArray];
+    NSArray *pinArray = [NSArray array];
+    [Pin fetchAll:pinArray];
     NSSet *pinSet = [NSSet setWithArray:pinArray];
     return pinSet;
 }
@@ -67,9 +67,9 @@
 }
 
 // methods to store pins
-- (BOOL) savePin:(Pin *)pin
++ (BOOL) savePin:(Pin *)pin
 {
-    [pin saveInBackground];
+    return [pin saveInBackground];
 }
 
 @end
