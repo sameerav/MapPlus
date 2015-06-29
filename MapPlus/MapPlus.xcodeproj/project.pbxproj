@@ -13,6 +13,9 @@
 		4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B91B41C2F500376356 /* Images.xcassets */; };
 		4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */; };
 		4CC5A4C91B41C2F500376356 /* MapPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4C81B41C2F500376356 /* MapPlusTests.m */; };
+		4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D31B41C7E000376356 /* MapViewController.m */; };
+		4CC5A4D61B41C7E000376356 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D41B41C7E000376356 /* MapViewController.xib */; };
+		6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BAA90BA30D8351301FD24 /* libPods.a */; };
 		EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90A1B41C7680030BF12 /* ParseAPI.m */; };
 		EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90D1B41C79C0030BF12 /* Pin.m */; };
 		EA56C9121B41CC8C0030BF12 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9101B41CC8C0030BF12 /* Bolts.framework */; };
@@ -58,6 +61,12 @@
 		4CC5A4C21B41C2F500376356 /* MapPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC5A4C71B41C2F500376356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC5A4C81B41C2F500376356 /* MapPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPlusTests.m; sourceTree = "<group>"; };
+		4CC5A4D21B41C7E000376356 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4CC5A4D31B41C7E000376356 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4CC5A4D41B41C7E000376356 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		B26BAA90BA30D8351301FD24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE052377F7F0A0AEF5CC5D0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E18CCDB4F6B33213DB24D09A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EA56C9091B41C7680030BF12 /* ParseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseAPI.h; sourceTree = "<group>"; };
 		EA56C90A1B41C7680030BF12 /* ParseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseAPI.m; sourceTree = "<group>"; };
 		EA56C90C1B41C79C0030BF12 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
@@ -127,6 +136,8 @@
 				4CC5A4AB1B41C2F500376356 /* MapPlus */,
 				4CC5A4C51B41C2F500376356 /* MapPlusTests */,
 				4CC5A4AA1B41C2F500376356 /* Products */,
+				C68BEF4840CDDD4B31DC52CD /* Pods */,
+				76BEE82846E34DD300EEB318 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +162,9 @@
 				4CC5A4B61B41C2F500376356 /* Main.storyboard */,
 				4CC5A4B91B41C2F500376356 /* Images.xcassets */,
 				4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */,
+				4CC5A4D21B41C7E000376356 /* MapViewController.h */,
+				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
+				4CC5A4D41B41C7E000376356 /* MapViewController.xib */,
 				4CC5A4AC1B41C2F500376356 /* Supporting Files */,
 			);
 			path = MapPlus;
@@ -215,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CC5A4CC1B41C2F500376356 /* Build configuration list for PBXNativeTarget "MapPlus" */;
 			buildPhases = (
+				04F68FD002C369A22718719A /* Check Pods Manifest.lock */,
 				4CC5A4A51B41C2F500376356 /* Sources */,
 				4CC5A4A61B41C2F500376356 /* Frameworks */,
 				4CC5A4A71B41C2F500376356 /* Resources */,
+				6EA8D03574F4F3AAE403C44F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +307,7 @@
 				4CC5A4B81B41C2F500376356 /* Main.storyboard in Resources */,
 				4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */,
 				4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */,
+				4CC5A4D61B41C7E000376356 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +320,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04F68FD002C369A22718719A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA8D03574F4F3AAE403C44F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4CC5A4A51B41C2F500376356 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */,
 				4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */,
 				4CC5A4AF1B41C2F500376356 /* main.m in Sources */,
 				EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */,
@@ -437,6 +488,7 @@
 		};
 		4CC5A4CD1B41C2F500376356 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E18CCDB4F6B33213DB24D09A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -451,6 +503,7 @@
 		};
 		4CC5A4CE1B41C2F500376356 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCE052377F7F0A0AEF5CC5D0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
