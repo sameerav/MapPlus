@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBDD6C51B41ECC7009806D4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDD6C41B41ECC7009806D4 /* CoreLocation.framework */; };
 		4CC5A4AF1B41C2F500376356 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4AE1B41C2F500376356 /* main.m */; };
 		4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B11B41C2F500376356 /* AppDelegate.m */; };
 		4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B91B41C2F500376356 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CBDD6C41B41ECC7009806D4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CC5A4A91B41C2F500376356 /* MapPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC5A4AD1B41C2F500376356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC5A4AE1B41C2F500376356 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBDD6C51B41ECC7009806D4 /* CoreLocation.framework in Frameworks */,
 				6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,14 +97,14 @@
 			children = (
 				4CC5A4B01B41C2F500376356 /* AppDelegate.h */,
 				4CC5A4B11B41C2F500376356 /* AppDelegate.m */,
+				4CC5A4D21B41C7E000376356 /* MapViewController.h */,
+				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
 				EA56C90C1B41C79C0030BF12 /* Pin.h */,
 				EA56C90D1B41C79C0030BF12 /* Pin.m */,
 				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
 				EA56C90A1B41C7680030BF12 /* ParseAPI.m */,
 				4CC5A4B91B41C2F500376356 /* Images.xcassets */,
 				4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */,
-				4CC5A4D21B41C7E000376356 /* MapViewController.h */,
-				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
 				4CC5A4AC1B41C2F500376356 /* Supporting Files */,
 			);
 			path = MapPlus;
@@ -136,6 +139,7 @@
 		76BEE82846E34DD300EEB318 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CBDD6C41B41ECC7009806D4 /* CoreLocation.framework */,
 				B26BAA90BA30D8351301FD24 /* libPods.a */,
 			);
 			name = Frameworks;

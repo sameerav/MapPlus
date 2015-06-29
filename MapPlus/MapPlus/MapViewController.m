@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) NSMutableDictionary *pins;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -35,9 +36,19 @@
         
         self.navigationItem.leftBarButtonItem = filterPinButton;
         
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.delegate = self;
+        
+        [self.locationManager requestWhenInUseAuthorization];
+        
         // Initialize mapView
-        double fbLatitude = 37.4844666;
-        double fbLongitude = -122.1479385;
+//        double fbLatitude = 37.4844666;
+//        double fbLongitude = -122.1479385;
+//        int fbZoomLevel = 16;
+        
+        double fbLatitude = 0;
+        double fbLongitude = 0;
         int fbZoomLevel = 16;
         
         GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:fbLatitude
@@ -45,8 +56,9 @@
                                                                      zoom:fbZoomLevel];
         
         GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-        
         mapView.delegate = self;
+        
+        [self.locationManager startUpdatingLocation];
         
         // Set the mapType to a drawn representation
         mapView.mapType = kGMSTypeNormal;
@@ -75,6 +87,21 @@
     CLLocationDegrees longit = 0;
     
     [self.mapView animateToLocation:CLLocationCoordinate2DMake(latit, longit)];
+}
+
+// Mark - CLLocationManagerDelegate Methods
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"Did Update Location");
+    CLLocation *first = [locations lastObject];
+    [self.mapView animateToLocation:first.coordinate];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Did fail with error");
 }
 
 // Mark - GMSMapViewDelegate Methods
