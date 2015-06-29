@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBA0C401B41FAD3009726B4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA0C3E1B41FAD3009726B4 /* FilterViewController.m */; };
+		4CBA0C411B41FAD3009726B4 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA0C3F1B41FAD3009726B4 /* FilterViewController.xib */; };
 		4CBDD6C51B41ECC7009806D4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDD6C41B41ECC7009806D4 /* CoreLocation.framework */; };
 		4CC5A4AF1B41C2F500376356 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4AE1B41C2F500376356 /* main.m */; };
 		4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B11B41C2F500376356 /* AppDelegate.m */; };
@@ -30,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CBA0C3D1B41FAD3009726B4 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		4CBA0C3E1B41FAD3009726B4 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		4CBA0C3F1B41FAD3009726B4 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		4CBDD6C41B41ECC7009806D4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CC5A4A91B41C2F500376356 /* MapPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC5A4AD1B41C2F500376356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 				4CC5A4B11B41C2F500376356 /* AppDelegate.m */,
 				4CC5A4D21B41C7E000376356 /* MapViewController.h */,
 				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
+				4CBA0C3D1B41FAD3009726B4 /* FilterViewController.h */,
+				4CBA0C3E1B41FAD3009726B4 /* FilterViewController.m */,
+				4CBA0C3F1B41FAD3009726B4 /* FilterViewController.xib */,
 				EA56C90C1B41C79C0030BF12 /* Pin.h */,
 				EA56C90D1B41C79C0030BF12 /* Pin.m */,
 				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
@@ -237,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */,
+				4CBA0C411B41FAD3009726B4 /* FilterViewController.xib in Resources */,
 				4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +301,7 @@
 				4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */,
 				4CC5A4AF1B41C2F500376356 /* main.m in Sources */,
 				EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */,
+				4CBA0C401B41FAD3009726B4 /* FilterViewController.m in Sources */,
 				EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
