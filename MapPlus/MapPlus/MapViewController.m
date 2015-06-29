@@ -7,13 +7,17 @@
 //
 
 #import "MapViewController.h"
+#import "FilterViewController.h"
 @import GoogleMaps;
+#import "CreatePinViewController.h"
 
 @interface MapViewController ()
 
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) NSMutableDictionary *pins;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *endDate;
 
 @end
 
@@ -38,27 +42,25 @@
         
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = 20;
         self.locationManager.delegate = self;
         
         [self.locationManager requestWhenInUseAuthorization];
         
+        [self.locationManager startUpdatingLocation];
+        
         // Initialize mapView
-//        double fbLatitude = 37.4844666;
-//        double fbLongitude = -122.1479385;
-//        int fbZoomLevel = 16;
+        int zoomLevel = 16;
         
-        double fbLatitude = 0;
-        double fbLongitude = 0;
-        int fbZoomLevel = 16;
+        CLLocationCoordinate2D coords = self.locationManager.location.coordinate;
         
-        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:fbLatitude
-                                                                longitude:fbLongitude
-                                                                     zoom:fbZoomLevel];
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coords.latitude
+                                                                longitude:coords.longitude
+                                                                     zoom:zoomLevel];
         
         GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
         mapView.delegate = self;
         
-        [self.locationManager startUpdatingLocation];
         
         // Set the mapType to a drawn representation
         mapView.mapType = kGMSTypeNormal;
@@ -73,8 +75,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 // Mark - Button Press Methods
@@ -83,10 +83,14 @@
 {
     NSLog(@"Filter Pin Button Pressed");
     
-    CLLocationDegrees latit = 0;
-    CLLocationDegrees longit = 0;
+    FilterViewController *fvc = [[FilterViewController alloc] init];
     
-    [self.mapView animateToLocation:CLLocationCoordinate2DMake(latit, longit)];
+    UINavigationController *nc =
+    [[UINavigationController alloc] initWithRootViewController:fvc];
+    nc.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:nc animated:YES completion:nil];
+    
 }
 
 // Mark - CLLocationManagerDelegate Methods
@@ -95,8 +99,12 @@
      didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"Did Update Location");
-    CLLocation *first = [locations lastObject];
-    [self.mapView animateToLocation:first.coordinate];
+
+    CLLocationCoordinate2D coords = ((CLLocation *)[locations firstObject]).coordinate;
+    
+    [self.mapView animateToLocation:coords];
+    
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -109,10 +117,14 @@
 - (void)mapView:(GMSMapView *)mapView
 didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    // Should present AddPinScreen modally
+    CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
+    [self presentViewController:nc animated:YES completion:nil];
+
     GMSMarker *marker = [[GMSMarker alloc] init];
 
+    marker.icon = [GMSMarker markerImageWithColor:cpvc.color];
     marker.position = coordinate;
     marker.title = @"Gratuitously titled things";
     marker.snippet = @"Hello World";

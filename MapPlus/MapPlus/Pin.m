@@ -19,9 +19,20 @@
 @dynamic text;
 
 // this method is required for Pin to subclass Parse's PFObject
-+ (NSString *)parseClassName
-{
++ (NSString *)parseClassName {
     return @"Pin";
+}
+
+- (instancetype)initWithUser:(NSNumber *)userID
+                        date:(NSDate *)date
+                    location:(CLLocationCoordinate2D)position {
+    self = [super init];
+    if (self) {
+        self.userID = userID;
+        self.date = date;
+        self.position = position;
+    }
+    return self;
 }
 
 @end
