@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface Pin : NSObject
+@interface Pin:PFObject<PFSubclassing>
 @property UIColor *color;
 @property NSDate *date;
 @property NSNumber *latitude;
 @property NSNumber *longitude;
 @property NSNumber *userID;
 @property NSString *text;
+
++ (NSString *)parseClassName;
 @end

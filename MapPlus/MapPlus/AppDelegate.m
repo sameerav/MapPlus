@@ -52,11 +52,6 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    // code to set up a parse object
-    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    //    testObject[@"foo"] = @"bar";
-    //    [testObject saveInBackground];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

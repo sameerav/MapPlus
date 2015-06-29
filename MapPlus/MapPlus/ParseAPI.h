@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 @class Pin;
 
 @interface ParseAPI : NSObject

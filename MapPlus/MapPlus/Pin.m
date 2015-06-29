@@ -7,7 +7,22 @@
 //
 
 #import "Pin.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Pin
+
+// necessary because Pin subclasses Parse's PFObject
+@dynamic color;
+@dynamic date;
+@dynamic latitude;
+@dynamic longitude;
+@dynamic userID;
+@dynamic text;
+
+// this method is required for Pin to subclass Parse's PFObject
++ (NSString *)parseClassName
+{
+    return @"Pin";
+}
 
 @end
