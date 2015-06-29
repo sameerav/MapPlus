@@ -20,6 +20,9 @@
     
     // Set up Parse
     [self doParseSetup: launchOptions];
+    // Initialize GoogleMaps with API key
+    [GMSServices provideAPIKey:@"AIzaSyDDKPChzynlDv-f8NTFmxks_NLWJDvl34o"];
+    
     return YES;
 }
 
