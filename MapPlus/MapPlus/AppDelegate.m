@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 MapPlusTeam. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -16,8 +17,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self doParseSetup: launchOptions];
     return YES;
+}
+
+- (void)doParseSetup: (NSDictionary *)launchOptions
+{
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"ZtBPYEA3UbRJdB9jSTmnHLRiyoboJDmYd8Q48p53"
+                  clientKey:@"akhxAGt9iu1kdHIqXk6lt30znH2ZL0z1IuPOKQFa"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // code to set up a parse object
+    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    //    testObject[@"foo"] = @"bar";
+    //    [testObject saveInBackground];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

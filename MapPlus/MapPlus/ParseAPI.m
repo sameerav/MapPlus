@@ -10,4 +10,34 @@
 
 @implementation ParseAPI
 
+//- (NSSet *) getPin24HoursOld{
+//    
+//}
+//
+//- (NSSet *) getPinWeekOld
+//{
+//    
+//}
+//- (NSSet *) getPinMonthOld
+//{
+//    
+//}
+//
+//- (NSSet *) getPinsYearOld
+//{
+//    
+//}
+//
+//- (NSSet *) getPinsAllTime
+//{
+//    
+//}
+//
+//
+//// methods to store pins
+//- (BOOL) savePin:(Pin *)pin
+//{
+//    
+//}
+
 @end
