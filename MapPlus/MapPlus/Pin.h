@@ -11,14 +11,15 @@
 @import GoogleMaps;
 
 @interface Pin : NSObject
-@property UIColor *color;
-@property NSDate *date;
-@property CLLocationCoordinate2D position;
-@property NSNumber *userID;
-@property NSString *text;
 
 - (instancetype)initWithUser:(NSNumber *)userID
                         date:(NSDate *)date
                     location:(CLLocationCoordinate2D)position;
+
+@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSDate *date;
+@property (assign, nonatomic) CLLocationCoordinate2D position;
+@property (strong, nonatomic) NSNumber *userID;
+@property (strong, nonatomic) NSString *text;
 
 @end
