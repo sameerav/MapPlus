@@ -16,4 +16,9 @@
 @property CLLocationCoordinate2D position;
 @property NSNumber *userID;
 @property NSString *text;
+
+- (instancetype)initWithUser:(NSNumber *)userID
+                        date:(NSDate *)date
+                    location:(CLLocationCoordinate2D)position;
+
 @end
