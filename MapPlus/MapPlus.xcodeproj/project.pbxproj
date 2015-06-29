@@ -23,7 +23,6 @@
 		EA56C9121B41CC8C0030BF12 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9101B41CC8C0030BF12 /* Bolts.framework */; };
 		EA56C9131B41CC8C0030BF12 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9111B41CC8C0030BF12 /* Parse.framework */; };
 		EA56C9181B41CCD90030BF12 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9141B41CCD90030BF12 /* ParseCrashReporting.framework */; };
-		EA56C9191B41CCD90030BF12 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9151B41CCD90030BF12 /* ParseFacebookUtils.framework */; };
 		EA56C91A1B41CCD90030BF12 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9161B41CCD90030BF12 /* ParseFacebookUtilsV4.framework */; };
 		EA56C91B1B41CCD90030BF12 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9171B41CCD90030BF12 /* ParseUI.framework */; };
 		EA56C91D1B41CD1A0030BF12 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C91C1B41CD1A0030BF12 /* AudioToolbox.framework */; };
@@ -39,6 +38,8 @@
 		EA56C9311B41CD640030BF12 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9301B41CD640030BF12 /* libsqlite3.dylib */; };
 		EA56C9331B41CD6E0030BF12 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9321B41CD6E0030BF12 /* Accounts.framework */; };
 		EA56C9351B41CD730030BF12 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9341B41CD730030BF12 /* Social.framework */; };
+		EAE3889B1B4207F900B16D5F /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */; };
+		EAE3889D1B4208B500B16D5F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE3889C1B4208B500B16D5F /* libstdc++.6.0.9.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		EA56C9301B41CD640030BF12 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EA56C9321B41CD6E0030BF12 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EA56C9341B41CD730030BF12 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
+		EAE3889C1B4208B500B16D5F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE3889D1B4208B500B16D5F /* libstdc++.6.0.9.dylib in Frameworks */,
 				EA56C9351B41CD730030BF12 /* Social.framework in Frameworks */,
 				EA56C9331B41CD6E0030BF12 /* Accounts.framework in Frameworks */,
 				EA56C9311B41CD640030BF12 /* libsqlite3.dylib in Frameworks */,
@@ -120,7 +124,6 @@
 				EA56C91B1B41CCD90030BF12 /* ParseUI.framework in Frameworks */,
 				EA56C9131B41CC8C0030BF12 /* Parse.framework in Frameworks */,
 				EA56C9181B41CCD90030BF12 /* ParseCrashReporting.framework in Frameworks */,
-				EA56C9191B41CCD90030BF12 /* ParseFacebookUtils.framework in Frameworks */,
 				EA56C9121B41CC8C0030BF12 /* Bolts.framework in Frameworks */,
 				EA56C91A1B41CCD90030BF12 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				4CBDD6C51B41ECC7009806D4 /* CoreLocation.framework in Frameworks */,
@@ -167,6 +170,7 @@
 				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
 				EA56C90C1B41C79C0030BF12 /* Pin.h */,
 				EA56C90D1B41C79C0030BF12 /* Pin.m */,
+				EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */,
 				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
 				EA56C90A1B41C7680030BF12 /* ParseAPI.m */,
 				4CC5A4B91B41C2F500376356 /* Images.xcassets */,
@@ -205,6 +209,7 @@
 		EA56C90F1B41CC5A0030BF12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAE3889C1B4208B500B16D5F /* libstdc++.6.0.9.dylib */,
 				EA4A0FBF1B4200A6000A70C3 /* FBSDKCoreKit.framework */,
 				EA4A0FC01B4200A6000A70C3 /* FBSDKLoginKit.framework */,
 				EA4A0FC11B4200A6000A70C3 /* FBSDKShareKit.framework */,
@@ -376,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE3889B1B4207F900B16D5F /* FBMissingSymbols.m in Sources */,
 				4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */,
 				4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */,
 				4CC5A4AF1B41C2F500376356 /* main.m in Sources */,
