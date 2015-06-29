@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		4CC5A4AF1B41C2F500376356 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4AE1B41C2F500376356 /* main.m */; };
 		4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B11B41C2F500376356 /* AppDelegate.m */; };
-		4CC5A4B81B41C2F500376356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B61B41C2F500376356 /* Main.storyboard */; };
 		4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4B91B41C2F500376356 /* Images.xcassets */; };
 		4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */; };
 		4CC5A4C91B41C2F500376356 /* MapPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4C81B41C2F500376356 /* MapPlusTests.m */; };
 		4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D31B41C7E000376356 /* MapViewController.m */; };
-		4CC5A4D61B41C7E000376356 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D41B41C7E000376356 /* MapViewController.xib */; };
 		6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BAA90BA30D8351301FD24 /* libPods.a */; };
 		EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90A1B41C7680030BF12 /* ParseAPI.m */; };
 		EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90D1B41C79C0030BF12 /* Pin.m */; };
@@ -55,7 +53,6 @@
 		4CC5A4AE1B41C2F500376356 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CC5A4B01B41C2F500376356 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CC5A4B11B41C2F500376356 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4CC5A4B71B41C2F500376356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CC5A4B91B41C2F500376356 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CC5A4BC1B41C2F500376356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4CC5A4C21B41C2F500376356 /* MapPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +60,6 @@
 		4CC5A4C81B41C2F500376356 /* MapPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPlusTests.m; sourceTree = "<group>"; };
 		4CC5A4D21B41C7E000376356 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4CC5A4D31B41C7E000376356 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		4CC5A4D41B41C7E000376356 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		B26BAA90BA30D8351301FD24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE052377F7F0A0AEF5CC5D0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E18CCDB4F6B33213DB24D09A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,16 +151,14 @@
 			children = (
 				4CC5A4B01B41C2F500376356 /* AppDelegate.h */,
 				4CC5A4B11B41C2F500376356 /* AppDelegate.m */,
-				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
 				EA56C90C1B41C79C0030BF12 /* Pin.h */,
 				EA56C90D1B41C79C0030BF12 /* Pin.m */,
+				EA56C9091B41C7680030BF12 /* ParseAPI.h */,
 				EA56C90A1B41C7680030BF12 /* ParseAPI.m */,
-				4CC5A4B61B41C2F500376356 /* Main.storyboard */,
 				4CC5A4B91B41C2F500376356 /* Images.xcassets */,
 				4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */,
 				4CC5A4D21B41C7E000376356 /* MapViewController.h */,
 				4CC5A4D31B41C7E000376356 /* MapViewController.m */,
-				4CC5A4D41B41C7E000376356 /* MapViewController.xib */,
 				4CC5A4AC1B41C2F500376356 /* Supporting Files */,
 			);
 			path = MapPlus;
@@ -304,10 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CC5A4B81B41C2F500376356 /* Main.storyboard in Resources */,
 				4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */,
 				4CC5A4BA1B41C2F500376356 /* Images.xcassets in Resources */,
-				4CC5A4D61B41C7E000376356 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4CC5A4B61B41C2F500376356 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CC5A4B71B41C2F500376356 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

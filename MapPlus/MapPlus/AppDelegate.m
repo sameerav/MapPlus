@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
+#import "MapViewController.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -22,6 +23,19 @@
     [self doParseSetup: launchOptions];
     // Initialize GoogleMaps with API key
     [GMSServices provideAPIKey:@"AIzaSyDDKPChzynlDv-f8NTFmxks_NLWJDvl34o"];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    MapViewController* mvc = [[MapViewController alloc] init];
+    
+    UINavigationController *navController =
+    [[UINavigationController alloc] initWithRootViewController:mvc];
+    
+    self.window.rootViewController = navController;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
