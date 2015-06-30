@@ -85,6 +85,8 @@
         
         // Set the mapType to a drawn representation
         mapView.mapType = kGMSTypeNormal;
+        mapView.myLocationEnabled = YES;
+        mapView.settings.myLocationButton = YES;
         
         self.mapView = mapView;
         self.view = mapView;
