@@ -63,15 +63,15 @@
 {
     UIButton *button = (UIButton *)sender;
     
-    NSDictionary *buttonMapping = @{@"Red - Angry"         : @"Angry",
-                                    @"Orange - Energetic"  : @"Energetic",
-                                    @"Yellow - Happy"      : @"Happy",
-                                    @"Green - Jealous"     : @"Jealous",
-                                    @"Blue - Sad"          : @"Sad",
-                                    @"Purple - Optimistic" : @"Optimistic"};
+    NSDictionary *buttonAttributes = @{@1 : @[@"Angry",      [UIColor redColor]],
+                                       @2 : @[@"Energetic",  [UIColor orangeColor]],
+                                       @3 : @[@"Happy",      [UIColor yellowColor]],
+                                       @4 : @[@"Jealous",    [UIColor greenColor]],
+                                       @5 : @[@"Sad",        [UIColor blueColor]],
+                                       @6 : @[@"Optimistic", [UIColor purpleColor]]};
     
-    self.pin.color = button.backgroundColor;
-    self.pin.colorString = buttonMapping[button.currentTitle];
+    self.pin.colorString = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][0];
+    self.pin.color = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][1];
     self.pin.text = self.textField.text;
     
     [self dismissViewAndSave];
