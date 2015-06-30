@@ -143,7 +143,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
     CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
     
-    cpvc.saveBlock = ^(Pin *pin){
+    cpvc.saveBlock = ^(Pin *pin) {
         [self dismissViewControllerAnimated:YES completion:^{
             if (!pin.pinMarker) {
                 pin.pinMarker = [self createPinMarker:pin];
@@ -210,9 +210,9 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     // FILTER THE PINS HERE BASED ON THE FILTER SETTINGS
 }
 
-- (GMSMarker *)createPinMarker:(Pin *)pin
+- (GMSMarker *)createPinMarker:(Pin *)pin;
 {
-    GMSMarker *marker = [[GMSMarker alloc] init];
+    GMSMarker *marker = [GMSMarker markerWithPosition:pin.position];
     
     marker.icon = [GMSMarker markerImageWithColor:pin.color];
     marker.position = pin.position;

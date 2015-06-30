@@ -8,6 +8,8 @@
 
 #import "CreatePinViewController.h"
 #import "Pin.h"
+#import "ParseAPI.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CreatePinViewController ()
 
@@ -31,18 +33,22 @@
         _location = location;
         
         
-        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                     target:self
                                                                                     action:@selector(cancelButtonPressed:)];
-        self.navigationItem.leftBarButtonItem = cancelItem;
-        
+        self.navigationItem.leftBarButtonItem = cancelButton;
         
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self
                                                                                     action:@selector(doneButtonPressed:)];
+        
         self.navigationItem.rightBarButtonItem = doneButton;
         
         self.navigationItem.title = @"Drop a New Pin";
+        
+        [[self.textBox layer] setBorderColor:[[UIColor grayColor] CGColor]];
+        [[self.textBox layer] setBorderWidth:2.3];
+        [[self.textBox layer] setCornerRadius:15];
     }
     
     return self;
@@ -87,6 +93,7 @@
 - (void)dismissViewAndSave
 {
     if (self.saveBlock) {
+        self.pin.text = self.textBox.text;
         self.saveBlock(self.pin);
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
