@@ -104,6 +104,19 @@
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate date];
+    
+    NSDictionary *grammar = @{@"Angry": @"An angry",
+                              @"Energetic": @"An energetic",
+                              @"Happy": @"A happy",
+                              @"Jealous": @"A jealous",
+                              @"Sad": @"A sad",
+                              @"Optimistic": @"An optimistic"};
+    
+    notification.alertBody = [NSString stringWithFormat:@"%@ pin has been placed near you! Why not check it out?", grammar[self.pin.emotionString]];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 @end

@@ -23,6 +23,12 @@
     // Set up Parse
     //    [self doParseSetup: launchOptions];
     // Initialize GoogleMaps with API key
+    
+    UIUserNotificationType types = UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
     [GMSServices provideAPIKey:@"AIzaSyDDKPChzynlDv-f8NTFmxks_NLWJDvl34o"];
     
     
