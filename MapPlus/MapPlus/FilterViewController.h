@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class MapViewController;
 
-@interface FilterViewController : UIViewController
+@interface FilterViewController: UIViewController
 @property (weak, nonatomic) MapViewController *mvc;
 @end

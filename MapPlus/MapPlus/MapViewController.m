@@ -177,8 +177,8 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     }
     if (self.emotionFilter) {
         [self.pins objectsPassingTest:^(id obj, BOOL *stop) {
-            NSDictionary *colorDict = @{@"red": [UIColor redColor], @"orange": [UIColor orangeColor], @"yellow": [UIColor yellowColor], @"green": [UIColor greenColor], @"blue": [UIColor blueColor], @"purple": [UIColor purpleColor]};
-            if ([colorDict[self.emotionFilter] isEqual:((Pin *)obj).color]) {
+            NSDictionary *colorDict = @{ [UIColor redColor]:@"red", [UIColor orangeColor]: @"orange", [UIColor yellowColor]: @"yellow", [UIColor greenColor]: @"green", [UIColor blueColor]: @"blue", [UIColor purpleColor]:@"purple"};
+            if ([self.emotionFilter containsObject:colorDict[((Pin *)obj).color]]) {
                 return YES;
             } else {
                 return NO;

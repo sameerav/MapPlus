@@ -23,7 +23,6 @@
 - (IBAction)addGreenPin:(id)sender;
 - (IBAction)addBluePin:(id)sender;
 - (IBAction)addPurplePin:(id)sender;
-- (IBAction)cancel:(id)sender;
 
 @property (nonatomic, copy) void (^saveBlock)(Pin *);
 

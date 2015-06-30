@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController">
             <connections>
-                <outlet property="emotionFilterControl" destination="YMT-SP-IJl" id="XQx-fs-85f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,13 +22,13 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjq-s7-BJp">
-                    <rect key="frame" x="8" y="188" width="287" height="30"/>
+                    <rect key="frame" x="8" y="188" width="287" height="32"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mr-l7-0aD">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mr-l7-0aD">
                     <rect key="frame" x="16" y="128" width="64" height="30"/>
                     <state key="normal" title="Last Year">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,23 +56,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Emotion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-qQ-lgR">
-                    <rect key="frame" x="16" y="290" width="132" height="21"/>
+                    <rect key="frame" x="16" y="290" width="131.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMT-SP-IJl">
-                    <rect key="frame" x="239" y="331" width="123" height="29"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                    <connections>
-                        <action selector="chooseEmotion:" destination="-1" eventType="valueChanged" id="fbg-g4-By9"/>
-                    </connections>
-                </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K0-gJ-jLO">
-                    <rect key="frame" x="263" y="238" width="75" height="30"/>
+                    <rect key="frame" x="263" y="240" width="75" height="30"/>
                     <state key="normal" title="Clear Filter">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -81,17 +70,8 @@
                         <action selector="clearTimeFilters:" destination="-1" eventType="touchUpInside" id="R8y-8m-lNH"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M7-wc-qew">
-                    <rect key="frame" x="263" y="379" width="75" height="30"/>
-                    <state key="normal" title="Clear Filter">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="clearEmotionFilters:" destination="-1" eventType="touchUpInside" id="1hO-Oz-uL3"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-Kf-7Jt">
-                    <rect key="frame" x="16" y="88" width="62" height="21"/>
+                    <rect key="frame" x="16" y="88" width="61.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -99,14 +79,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="2M7-wc-qew" secondAttribute="centerX" id="6O1-jI-JF3"/>
                 <constraint firstItem="fgG-Kf-7Jt" firstAttribute="leading" secondItem="9Mr-l7-0aD" secondAttribute="leading" id="8Ic-BB-hn3"/>
-                <constraint firstAttribute="centerX" secondItem="YMT-SP-IJl" secondAttribute="centerX" id="Aso-fJ-j7K"/>
-                <constraint firstItem="2M7-wc-qew" firstAttribute="top" secondItem="YMT-SP-IJl" secondAttribute="bottom" constant="20" id="CrS-xn-nTC"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="width" secondItem="Zjq-s7-BJp" secondAttribute="width" id="EBJ-P2-Bv1"/>
                 <constraint firstAttribute="trailing" secondItem="PSc-zq-OxU" secondAttribute="trailing" constant="8" id="F2f-6Z-Nuq"/>
                 <constraint firstAttribute="centerX" secondItem="x1a-20-lva" secondAttribute="centerX" id="FAJ-Ts-o5X"/>
                 <constraint firstItem="x1a-20-lva" firstAttribute="top" secondItem="VZf-Cb-miZ" secondAttribute="top" id="JQD-4z-IGs"/>
+                <constraint firstItem="4J0-qQ-lgR" firstAttribute="top" secondItem="5K0-gJ-jLO" secondAttribute="top" constant="50" id="KKB-to-QGZ"/>
                 <constraint firstAttribute="centerX" secondItem="5K0-gJ-jLO" secondAttribute="centerX" id="La3-3W-78Z"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="leading" secondItem="Zjq-s7-BJp" secondAttribute="trailing" constant="10" id="NvS-j1-sV7"/>
                 <constraint firstItem="5K0-gJ-jLO" firstAttribute="top" secondItem="Zjq-s7-BJp" secondAttribute="bottom" constant="20" id="P6O-08-iuu"/>
@@ -119,7 +97,6 @@
                 <constraint firstItem="Zjq-s7-BJp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ne4-iH-5yp"/>
                 <constraint firstItem="9Mr-l7-0aD" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="20" id="pAd-vw-J2Q"/>
                 <constraint firstAttribute="centerY" secondItem="4J0-qQ-lgR" secondAttribute="centerY" id="tZ9-Jr-ElV"/>
-                <constraint firstItem="YMT-SP-IJl" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="vx8-Xe-fs3"/>
                 <constraint firstItem="fgG-Kf-7Jt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="yDN-ma-8Ra"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

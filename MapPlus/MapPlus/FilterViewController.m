@@ -10,7 +10,6 @@
 #import "MapViewController.h"
 
 @interface FilterViewController ()
-@property (weak, nonatomic) IBOutlet UISegmentedControl *emotionFilterControl;
 @end
 
 @implementation FilterViewController
@@ -29,18 +28,6 @@
 
 - (IBAction)clearTimeFilters:(id)sender {
     self.mvc.timeFilter = nil;
-}
-
-- (IBAction)chooseEmotion:(id)sender
-{
-    UISegmentedControl *segment = (UISegmentedControl *)sender;
-    NSInteger index = segment.selectedSegmentIndex;
-    NSArray *colorArray = @[@"anger", @"happiness", @"energy", @"optimism", @"sadness", @"jealousy"];
-    self.mvc.emotionFilter = colorArray[index];
-}
-
-- (IBAction)clearEmotionFilters:(id)sender {
-    self.mvc.emotionFilter = nil;
 }
 
 - (instancetype)init
@@ -91,12 +78,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.emotionFilterControl insertSegmentWithTitle:@"Anger" atIndex:0 animated:NO];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Happiness" atIndex:1 animated:NO];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Energy" atIndex:2 animated:NO];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Optimism" atIndex:3 animated:NO];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Sadness" atIndex:4 animated:YES];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Jealousy" atIndex:5 animated:NO];
+
 }
 
 
