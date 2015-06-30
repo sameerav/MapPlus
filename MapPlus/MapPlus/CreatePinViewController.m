@@ -70,9 +70,8 @@
                                        @5 : @[@"Sad",        [UIColor blueColor]],
                                        @6 : @[@"Optimistic", [UIColor purpleColor]]};
     
-    self.pin.colorString = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][0];
+    self.pin.emotionString = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][0];
     self.pin.color = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][1];
-    self.pin.text = self.textField.text;
     
     [self dismissViewAndSave];
 }

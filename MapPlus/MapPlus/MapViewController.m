@@ -16,7 +16,8 @@
 @interface MapViewController ()
 
 @property (strong, nonatomic) GMSMapView *mapView;
-@property (strong, nonatomic) NSMutableSet *pins;
+@property (strong, nonatomic) NSMutableSet *allPins;
+@property (strong, nonatomic) NSMutableDictionary *pinMarkerMap;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -29,7 +30,8 @@
     self = [super init];
     
     if (self) {
-        _pins = [NSMutableSet set];
+        _allPins = [NSMutableSet set];
+        _pinMarkerMap = [NSMutableDictionary dictionary];
         _dateFilter = @"";
         _emotionFilter = [NSMutableSet setWithArray:@[@"Angry",
                                                       @"Energetic",
@@ -109,7 +111,9 @@
     [[UINavigationController alloc] initWithRootViewController:fvc];
     nc.modalPresentationStyle = UIModalPresentationFormSheet;
     
-    [self presentViewController:nc animated:YES completion:nil];
+    [self presentViewController:nc animated:YES completion:^{
+        [self refreshPinsSet];
+    }];
 }
 
 - (void)refreshPinButtonPressed:(id)sender
@@ -147,14 +151,10 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     
     cpvc.saveBlock = ^(Pin *pin) {
         [self dismissViewControllerAnimated:YES completion:^{
-            if (pin.colorString != nil && !pin.pinMarker) {
-                pin.pinMarker = [self createPinMarker:pin];
-            } else {
-                return;
-            }
-            
             //[ParseAPI savePin:pin];
-            [self.pins addObject:pin];
+            //Remove once parse saving is added
+            [self.allPins addObject:pin];
+            [self refreshPinsSet];
         }];
     };
     
@@ -166,8 +166,10 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 
 - (void)refreshPinsSet
 {
-    // Fetch pins from
-    NSSet *newPins;
+    // Fetch pins from Parse
+    
+    NSSet *newPins = nil;
+    
     if (self.dateFilter) {
         if ([self.dateFilter isEqualToString:@"day"]) {
             newPins = [ParseAPI getPin24HoursOld];
@@ -179,45 +181,34 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     } else {
         newPins = [ParseAPI getPinsAllTime];
     }
+    
+    //This needs to be done in a callback
+    
+    [self.allPins unionSet:newPins];
+    
     if (self.emotionFilter) {
-        [self.pins objectsPassingTest:^(id obj, BOOL *stop) {
-            NSDictionary *colorDict = @{@"red"    : [UIColor redColor],
-                                        @"orange" : [UIColor orangeColor],
-                                        @"yellow" : [UIColor yellowColor],
-                                        @"green"  : [UIColor greenColor],
-                                        @"blue"   : [UIColor blueColor],
-                                        @"purple" : [UIColor purpleColor]};
-            
-            if ([colorDict[self.emotionFilter] isEqual:((Pin *)obj).color]) {
+        self.allPins = [[self.allPins objectsPassingTest:^(id obj, BOOL *stop) {
+            Pin* pin = (Pin *) obj;
+            if([self.emotionFilter containsObject:pin.emotionString]) {
                 return YES;
             } else {
+                GMSMarker *marker = [self.pinMarkerMap objectForKey:pin.pinID];
+                marker.map = nil;
                 return NO;
-            }
-        }];
+            };
+        }] mutableCopy];
     }
     
-    for (Pin* pin in newPins) {
-        if ([self.pins containsObject:pin]) {
-            continue;
+    for (Pin *pin in self.allPins) {
+        if (![self.pinMarkerMap objectForKey:pin.pinID]) {
+            GMSMarker *marker = [self createPinMarker:pin];
+            marker.map = self.mapView;
+            [self.pinMarkerMap setObject:marker forKey:pin.pinID];
         }
-        
-        if (!pin.pinMarker) {
-            pin.pinMarker = [self createPinMarker:pin];
-        }
-        
     }
     
-    // FILTER THE PINS HERE BASED ON THE FILTER SETTINGS
-    // Uncomment when able to retrieve from parse
-    /*for (Pin *pin in self.pins) {
-        if (![newPins containsObject:pin]) {
-            pin.pinMarker.map = nil;
-        } else {
-            pin.pinMarker.map = self.mapView;
-        }
-    }*/
+    NSLog(@"%@", self.allPins);
     
-    [self.pins unionSet:newPins];
 }
 
 - (GMSMarker *)createPinMarker:(Pin *)pin;
@@ -227,9 +218,8 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     marker.icon = [GMSMarker markerImageWithColor:pin.color];
     marker.position = pin.position;
     marker.snippet = pin.text;
-    marker.title = pin.colorString;
+    marker.title = pin.emotionString;
     marker.appearAnimation = kGMSMarkerAnimationPop;
-    //marker.map = self.mapView; // puts marker on the map immediately
     
     return marker;
 }

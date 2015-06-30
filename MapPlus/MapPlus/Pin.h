@@ -18,12 +18,12 @@
                     location:(CLLocationCoordinate2D)position;
 
 @property (strong, nonatomic) UIColor *color;
-@property (copy, nonatomic)   NSString *colorString;
+@property (copy, nonatomic)   NSString *emotionString;
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) CLLocationCoordinate2D position;
 @property (strong, nonatomic) NSNumber *userID;
+@property (strong, nonatomic) NSString *pinID;
 @property (copy, nonatomic)   NSString *text;
-@property (strong, nonatomic) GMSMarker *pinMarker;
 
 + (NSString *)parseClassName;
 

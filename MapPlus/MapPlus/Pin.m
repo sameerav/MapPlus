@@ -25,6 +25,7 @@
 // necessary because Pin subclasses Parse's PFObject
 @dynamic date;
 @dynamic userID;
+@dynamic pinID;
 @dynamic text;
 @dynamic latitude;
 @dynamic longtitude;
@@ -35,8 +36,7 @@
 
 @synthesize color;
 @synthesize position;
-@synthesize pinMarker;
-@synthesize colorString;
+@synthesize emotionString;
 
 // this method is required for Pin to subclass Parse's PFObject
 + (NSString *)parseClassName {
@@ -55,6 +55,7 @@
     self = [super init];
     if (self) {
         self.userID = userID;
+        self.pinID = [[NSUUID UUID] UUIDString];
         self.date = date;
         self.position = coordinates;
         
