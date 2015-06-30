@@ -46,42 +46,9 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-R3-I4j">
-                    <rect key="frame" x="0.0" y="405" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                    <state key="normal" title="Happy">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="pk7-sb-c0Z"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-9u-NbM">
-                    <rect key="frame" x="0.0" y="443" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                    <state key="normal" title="Jealous">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="AMk-KO-PfU"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-pf-dic">
-                    <rect key="frame" x="0.0" y="481" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                    <state key="normal" title="Sad">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="iHY-b2-TAb"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-5M-Xv6">
                     <rect key="frame" x="0.0" y="133" width="600" height="107"/>
-                    <color key="backgroundColor" red="0.87174479166666663" green="0.87174479166666663" blue="0.87174479166666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="107" id="3ht-pb-D87"/>
                     </constraints>
@@ -96,7 +63,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-xd-OLD">
                     <rect key="frame" x="0.0" y="367" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Energetic">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,9 +72,20 @@
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="TzK-hP-bLC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-R3-I4j">
+                    <rect key="frame" x="0.0" y="405" width="600" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Happy">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="pk7-sb-c0Z"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urL-Fc-rMK">
                     <rect key="frame" x="0.0" y="329" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Angry">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,9 +94,31 @@
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="1Ue-3z-eua"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-9u-NbM">
+                    <rect key="frame" x="0.0" y="443" width="600" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Jealous">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="AMk-KO-PfU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-pf-dic">
+                    <rect key="frame" x="0.0" y="481" width="600" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Sad">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="iHY-b2-TAb"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-PX-gRb">
                     <rect key="frame" x="0.0" y="519" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Optimistic">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
