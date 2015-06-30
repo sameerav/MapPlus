@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSMutableDictionary *pinMarkerMap;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+@property (strong, nonatomic) NSMutableSet *allOfThePins;
+
 @end
 
 @implementation MapViewController
@@ -39,6 +41,8 @@
                                                       @"Jealous",
                                                       @"Sad",
                                                       @"Optimistic"]];
+        
+        self.allOfThePins = [[MapViewController oneHundredPins] mutableCopy];
         
         self.navigationItem.title = @"MapPlus";
         
@@ -81,6 +85,8 @@
         
         // Set the mapType to a drawn representation
         mapView.mapType = kGMSTypeNormal;
+        mapView.myLocationEnabled = YES;
+        mapView.settings.myLocationButton = YES;
         
         self.mapView = mapView;
         self.view = mapView;
@@ -153,7 +159,12 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
         [self dismissViewControllerAnimated:YES completion:^{
             //[ParseAPI savePin:pin];
             //Remove once parse saving is added
-            [self.allPins addObject:pin];
+            [self.allOfThePins addObject:pin];
+            GMSMarker *marker = [self createPinMarker:pin];
+            marker.map = self.mapView;
+            
+            [self.pinMarkerMap setObject:marker forKey:pin.pinID];
+            
             [self refreshPinsSet];
         }];
     };
@@ -170,15 +181,19 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     
     NSSet *newPins = nil;
     
-    if (self.dateFilter) {
-        if ([self.dateFilter isEqualToString:@"day"]) {
-            self.allPins = [[ParseAPI getPin24HoursOld] mutableCopy];
-        } else if ([self.dateFilter isEqualToString:@"month"]) {
-            self.allPins = [[ParseAPI getPinMonthOld] mutableCopy];
-        } else if ([self.dateFilter isEqualToString:@"year"]){
-            self.allPins = [[ParseAPI getPinsYearOld] mutableCopy];
-        }
-    }
+//    if (self.dateFilter) {
+//        if ([self.dateFilter isEqualToString:@"day"]) {
+//            newPins = [ParseAPI getPin24HoursOld];
+//        } else if ([self.dateFilter isEqualToString:@"month"]) {
+//            newPins = [ParseAPI getPinMonthOld];
+//        } else if ([self.dateFilter isEqualToString:@"year"]){
+//            newPins = [ParseAPI getPinsYearOld];
+//        }
+//    } else {
+//        newPins = [ParseAPI getPinsAllTime];
+//    }
+    
+    newPins = self.allOfThePins;
     
     //This needs to be done in a callback
     
@@ -200,12 +215,14 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     for (Pin *pin in self.allPins) {
         if (![self.pinMarkerMap objectForKey:pin.pinID]) {
             GMSMarker *marker = [self createPinMarker:pin];
-            marker.map = self.mapView;
             [self.pinMarkerMap setObject:marker forKey:pin.pinID];
+        } else {
+            GMSMarker *marker = [self.pinMarkerMap objectForKey:pin.pinID];
+            marker.map = self.mapView;
         }
     }
     
-    NSLog(@"%@", self.allPins);
+    NSLog(@"%lu", (unsigned long)[self.allPins count]);
     
 }
 
@@ -220,6 +237,35 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     marker.appearAnimation = kGMSMarkerAnimationPop;
     
     return marker;
+}
+
++ (NSSet *)oneHundredPins
+{
+    NSMutableSet *out = [NSMutableSet set];
+    
+    NSDictionary *attributes = @{@1 : @[@"Angry",      [UIColor redColor]],
+                                 @2 : @[@"Energetic",  [UIColor orangeColor]],
+                                 @3 : @[@"Happy",      [UIColor yellowColor]],
+                                 @4 : @[@"Jealous",    [UIColor greenColor]],
+                                 @5 : @[@"Sad",        [UIColor blueColor]],
+                                 @6 : @[@"Optimistic", [UIColor purpleColor]]};
+    
+    
+    for (int ii = 0; ii < 100; ii++) {
+        CLLocationDegrees latit = (float) arc4random_uniform(132) + arc4random_uniform(1000) / 1000;
+        CLLocationDegrees longi = (float) arc4random_uniform(132) + arc4random_uniform(1000) / 1000;
+        Pin *pin = [[Pin alloc] initWithUser:@0
+                                        date:[NSDate date]
+                                    location:CLLocationCoordinate2DMake(latit, longi)];
+        
+        NSArray *atts = attributes[[NSNumber numberWithUnsignedInt:(arc4random_uniform(6) + 1)]];
+        pin.emotionString = atts[0];
+        pin.color = atts[1];
+        
+        [out addObject:pin];
+    }
+    
+    return out;
 }
 
 @end

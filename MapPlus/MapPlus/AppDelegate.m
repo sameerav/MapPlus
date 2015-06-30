@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "ParseAPI.h"
 #import "AppDelegate.h"
 #import "MapViewController.h"
 @import GoogleMaps;
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Set up Parse
-//    [self doParseSetup: launchOptions];
+    //    [self doParseSetup: launchOptions];
     // Initialize GoogleMaps with API key
     [GMSServices provideAPIKey:@"AIzaSyDDKPChzynlDv-f8NTFmxks_NLWJDvl34o"];
     
