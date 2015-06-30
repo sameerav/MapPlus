@@ -49,9 +49,21 @@
     return self;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.textField setDelegate:self];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self.textField endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

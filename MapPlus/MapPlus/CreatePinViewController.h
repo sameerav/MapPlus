@@ -10,7 +10,7 @@
 @import GoogleMaps;
 @class Pin;
 
-@interface CreatePinViewController : UIViewController
+@interface CreatePinViewController : UIViewController <UITextFieldDelegate>
 
 @property (copy, nonatomic) void (^saveBlock)(Pin *);
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location;
