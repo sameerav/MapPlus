@@ -26,8 +26,14 @@
         _location = location;
         UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                     target:self
-                                                                                    action:@selector(cancel:)];
+                                                                                    action:@selector(cancelButtonPressed:)];
         self.navigationItem.leftBarButtonItem = cancelItem;
+        
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                    target:self
+                                                                                    action:@selector(doneButtonPressed:)];
+        self.navigationItem.rightBarButtonItem = doneItem;
+        
         self.navigationItem.title = @"Drop a New Pin";
     }
     return self;
@@ -101,8 +107,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)cancel:(id)sender {
+- (void)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)doneButtonPressed:(id)sender {
+    if (self.saveBlock) {
+        self.saveBlock(self.pin);
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (Pin *)createPin {
