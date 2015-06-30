@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePinViewController">
             <connections>
-                <outlet property="textBox" destination="tEZ-dq-6M3" id="BBa-UA-DeC"/>
+                <outlet property="textField" destination="Wue-lS-em9" id="bTc-Q9-cmo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,10 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRp-Kg-DbZ">
-                    <rect key="frame" x="217" y="131" width="166" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="30" y="290" width="540" height="33"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Orange - Energetic">
-                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -27,90 +28,117 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVu-6n-sjg">
-                    <rect key="frame" x="254" y="284" width="93" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="30" y="449" width="540" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Blue - Sad">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="cml-CZ-GHH"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-UG-X9j">
-                    <rect key="frame" x="247" y="80" width="106" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Red - Angry">
-                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="akc-zi-EC4"/>
-                    </connections>
-                </button>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoP-hl-Vkb">
-                    <rect key="frame" x="228" y="335" width="144" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="30" y="502" width="540" height="33"/>
+                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Purple - Jealous">
-                        <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="iki-oF-49q"/>
+                        <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="rMl-Yc-gJ1"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndo-gc-TRv">
-                    <rect key="frame" x="230" y="233" width="140" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="30" y="396" width="540" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Green - Jealous">
-                        <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="MTe-Xg-48z"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-dq-6M3">
-                    <rect key="frame" x="60" y="389" width="481" height="184"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-bg-ItF">
-                    <rect key="frame" x="233" y="182" width="133" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="30" y="343" width="540" height="33"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Yellow - Happy">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="ax1-8j-LLn"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wue-lS-em9">
+                    <rect key="frame" x="30" y="124" width="540" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoV-SA-xjA">
+                    <rect key="frame" x="219" y="84" width="162" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Pin Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2M-pU-8cy">
+                    <rect key="frame" x="239" y="194" width="123" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-UG-X9j">
+                    <rect key="frame" x="30" y="237" width="540" height="33"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Red - Angry">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addPinButtonPressed:" destination="-1" eventType="touchUpInside" id="akc-zi-EC4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ndo-gc-TRv" firstAttribute="centerX" secondItem="cVu-6n-sjg" secondAttribute="centerX" id="3Pb-At-Gcy"/>
-                <constraint firstItem="ndo-gc-TRv" firstAttribute="centerX" secondItem="KZy-bg-ItF" secondAttribute="centerX" constant="0.5" id="Acu-mA-ov9"/>
-                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="top" secondItem="D3Z-UG-X9j" secondAttribute="bottom" constant="15" id="BAm-fo-UWT"/>
-                <constraint firstItem="xoP-hl-Vkb" firstAttribute="centerX" secondItem="tEZ-dq-6M3" secondAttribute="centerX" id="Dqw-wb-r3a"/>
-                <constraint firstItem="KZy-bg-ItF" firstAttribute="centerX" secondItem="JRp-Kg-DbZ" secondAttribute="centerX" id="E6w-69-r1u"/>
-                <constraint firstItem="KZy-bg-ItF" firstAttribute="height" secondItem="JRp-Kg-DbZ" secondAttribute="height" id="E88-og-r6g"/>
-                <constraint firstItem="KZy-bg-ItF" firstAttribute="top" secondItem="JRp-Kg-DbZ" secondAttribute="bottom" constant="15" id="IHW-uI-MCf"/>
-                <constraint firstAttribute="centerX" secondItem="D3Z-UG-X9j" secondAttribute="centerX" constant="-0.5" id="NBQ-xz-KYC"/>
-                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="centerX" secondItem="D3Z-UG-X9j" secondAttribute="centerX" constant="-0.5" id="Tcu-GV-cy3"/>
-                <constraint firstItem="tEZ-dq-6M3" firstAttribute="top" secondItem="xoP-hl-Vkb" secondAttribute="bottom" constant="18" id="U54-qg-pZO"/>
-                <constraint firstItem="ndo-gc-TRv" firstAttribute="top" secondItem="KZy-bg-ItF" secondAttribute="bottom" constant="15" id="XQF-YW-kbZ"/>
-                <constraint firstItem="xoP-hl-Vkb" firstAttribute="centerX" secondItem="cVu-6n-sjg" secondAttribute="centerX" id="Yma-Bc-yQl"/>
-                <constraint firstAttribute="bottom" secondItem="tEZ-dq-6M3" secondAttribute="bottom" constant="27" id="c2b-Il-53J"/>
-                <constraint firstItem="ndo-gc-TRv" firstAttribute="height" secondItem="cVu-6n-sjg" secondAttribute="height" id="cXD-6G-5PQ"/>
-                <constraint firstItem="xoP-hl-Vkb" firstAttribute="height" secondItem="cVu-6n-sjg" secondAttribute="height" id="erN-Cc-Bm8"/>
-                <constraint firstItem="tEZ-dq-6M3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="gZm-V8-N0Y"/>
-                <constraint firstItem="cVu-6n-sjg" firstAttribute="top" secondItem="ndo-gc-TRv" secondAttribute="bottom" constant="15" id="k49-ri-HWY"/>
-                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="height" secondItem="D3Z-UG-X9j" secondAttribute="height" id="kqU-cA-e5x"/>
-                <constraint firstItem="D3Z-UG-X9j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="mmJ-qq-gBs"/>
-                <constraint firstAttribute="trailing" secondItem="tEZ-dq-6M3" secondAttribute="trailing" constant="59" id="o6X-DT-6MW"/>
-                <constraint firstItem="ndo-gc-TRv" firstAttribute="height" secondItem="KZy-bg-ItF" secondAttribute="height" id="shB-x7-mhQ"/>
-                <constraint firstItem="xoP-hl-Vkb" firstAttribute="top" secondItem="cVu-6n-sjg" secondAttribute="bottom" constant="15" id="ula-Oh-Nws"/>
+                <constraint firstItem="D3Z-UG-X9j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="0ot-vY-WPi"/>
+                <constraint firstItem="n2M-pU-8cy" firstAttribute="top" secondItem="Wue-lS-em9" secondAttribute="bottom" constant="40" id="2J5-K9-ECJ"/>
+                <constraint firstItem="KZy-bg-ItF" firstAttribute="top" secondItem="JRp-Kg-DbZ" secondAttribute="bottom" constant="20" id="35Q-jl-PBU"/>
+                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="386-97-9ER"/>
+                <constraint firstItem="ndo-gc-TRv" firstAttribute="centerX" secondItem="cVu-6n-sjg" secondAttribute="centerX" id="474-4t-P3G"/>
+                <constraint firstAttribute="trailing" secondItem="xoP-hl-Vkb" secondAttribute="trailing" constant="30" id="4gT-2y-kVX"/>
+                <constraint firstItem="xoP-hl-Vkb" firstAttribute="top" secondItem="cVu-6n-sjg" secondAttribute="bottom" constant="20" id="4zp-4n-nJK"/>
+                <constraint firstAttribute="trailing" secondItem="KZy-bg-ItF" secondAttribute="trailing" constant="30" id="B9J-IU-B24"/>
+                <constraint firstAttribute="trailing" secondItem="JRp-Kg-DbZ" secondAttribute="trailing" constant="30" id="Dlq-jk-nzp"/>
+                <constraint firstAttribute="trailing" secondItem="cVu-6n-sjg" secondAttribute="trailing" constant="30" id="ESL-XU-Sbp"/>
+                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="top" secondItem="D3Z-UG-X9j" secondAttribute="bottom" constant="20" id="GCs-Fj-Rix"/>
+                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="centerX" secondItem="D3Z-UG-X9j" secondAttribute="centerX" id="H8k-1e-3qi"/>
+                <constraint firstItem="ndo-gc-TRv" firstAttribute="top" secondItem="KZy-bg-ItF" secondAttribute="bottom" constant="20" id="LbW-S2-y3C"/>
+                <constraint firstItem="xoP-hl-Vkb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="S2U-m3-8Ue"/>
+                <constraint firstAttribute="trailing" secondItem="D3Z-UG-X9j" secondAttribute="trailing" constant="30" id="Wye-xS-yyI"/>
+                <constraint firstItem="cVu-6n-sjg" firstAttribute="top" secondItem="ndo-gc-TRv" secondAttribute="bottom" constant="20" id="Xrw-OB-0jg"/>
+                <constraint firstItem="ndo-gc-TRv" firstAttribute="centerX" secondItem="KZy-bg-ItF" secondAttribute="centerX" id="YUu-Ja-3xG"/>
+                <constraint firstItem="JRp-Kg-DbZ" firstAttribute="centerX" secondItem="KZy-bg-ItF" secondAttribute="centerX" id="ZmU-7E-E3V"/>
+                <constraint firstItem="ndo-gc-TRv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="b4H-op-zCc"/>
+                <constraint firstAttribute="trailing" secondItem="ndo-gc-TRv" secondAttribute="trailing" constant="30" id="cnz-iB-tQB"/>
+                <constraint firstItem="Wue-lS-em9" firstAttribute="centerX" secondItem="n2M-pU-8cy" secondAttribute="centerX" constant="-0.5" id="djp-0J-HG6"/>
+                <constraint firstItem="KZy-bg-ItF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="fcj-RZ-2qS"/>
+                <constraint firstItem="cVu-6n-sjg" firstAttribute="centerX" secondItem="xoP-hl-Vkb" secondAttribute="centerX" id="fuo-iK-HGM"/>
+                <constraint firstItem="D3Z-UG-X9j" firstAttribute="top" secondItem="n2M-pU-8cy" secondAttribute="bottom" constant="22" id="lKy-kX-ZzK"/>
+                <constraint firstItem="D3Z-UG-X9j" firstAttribute="centerX" secondItem="n2M-pU-8cy" secondAttribute="centerX" constant="-0.5" id="mK0-Uf-6G8"/>
+                <constraint firstItem="cVu-6n-sjg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="oxb-PZ-HUh"/>
+                <constraint firstAttribute="centerX" secondItem="aoV-SA-xjA" secondAttribute="centerX" id="q4S-zX-82g"/>
+                <constraint firstItem="Wue-lS-em9" firstAttribute="centerX" secondItem="aoV-SA-xjA" secondAttribute="centerX" id="sVZ-H2-1pD"/>
+                <constraint firstItem="aoV-SA-xjA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="txW-b5-8kQ"/>
+                <constraint firstItem="Wue-lS-em9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="uXA-ZQ-wtV"/>
+                <constraint firstItem="Wue-lS-em9" firstAttribute="top" secondItem="aoV-SA-xjA" secondAttribute="bottom" constant="20" id="uvH-f6-BPJ"/>
+                <constraint firstAttribute="trailing" secondItem="Wue-lS-em9" secondAttribute="trailing" constant="30" id="ybd-SF-5gy"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="263" y="633"/>

@@ -16,7 +16,7 @@
 @property (assign, nonatomic) BOOL tag;
 @property (strong, nonatomic) Pin *pin;
 
-@property (weak, nonatomic) IBOutlet UITextView *textBox;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -70,9 +70,9 @@
                                     @"Blue - Sad"          : @"Sad",
                                     @"Purple - Optimistic" : @"Optimistic"};
     
-    self.pin.color = button.currentTitleColor;
+    self.pin.color = button.backgroundColor;
     self.pin.colorString = buttonMapping[button.currentTitle];
-    self.pin.text = self.textBox.text;
+    self.pin.text = self.textField.text;
     
     [self dismissViewAndSave];
 }
@@ -88,7 +88,7 @@
 - (void)dismissViewAndSave
 {
     if (self.saveBlock) {
-        self.pin.text = self.textBox.text;
+        self.pin.text = self.textField.text;
         self.saveBlock(self.pin);
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
