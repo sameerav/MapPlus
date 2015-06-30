@@ -202,9 +202,9 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     // FILTER THE PINS HERE BASED ON THE FILTER SETTINGS
 }
 
-- (GMSMarker *)createPinMarker:(Pin *)pin
+- (GMSMarker *)createPinMarker:(Pin *)pin;
 {
-    GMSMarker *marker = [[GMSMarker alloc] init];
+    GMSMarker *marker = [GMSMarker markerWithPosition:pin.position];
     
     marker.icon = [GMSMarker markerImageWithColor:pin.color];
     marker.snippet = pin.text;

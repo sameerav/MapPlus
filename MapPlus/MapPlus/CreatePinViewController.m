@@ -9,6 +9,7 @@
 #import "CreatePinViewController.h"
 #import "Pin.h"
 #import "ParseAPI.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CreatePinViewController ()
 
@@ -35,7 +36,9 @@
         
         self.navigationItem.title = @"Drop a New Pin";
         
-        self.text.text = @"How are you feeling?";
+        [[self.text layer] setBorderColor:[[UIColor grayColor] CGColor]];
+        [[self.text layer] setBorderWidth:2.3];
+        [[self.text layer] setCornerRadius:15];
     }
     return self;
 }
