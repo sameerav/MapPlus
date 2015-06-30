@@ -17,6 +17,8 @@
                         date:(NSDate *)date
                     location:(CLLocationCoordinate2D)position;
 
+- (void)setUpFromParse;
+
 @property (strong, nonatomic) UIColor *color;
 @property (copy, nonatomic)   NSString *colorString;
 @property (strong, nonatomic) NSDate *date;
@@ -24,6 +26,14 @@
 @property (strong, nonatomic) NSNumber *userID;
 @property (copy, nonatomic)   NSString *text;
 @property (strong, nonatomic) GMSMarker *pinMarker;
+
+// these properties are so parse can handle storing the pin
+@property float latitude;
+@property float longtitude;
+@property CGFloat red;
+@property CGFloat blue;
+@property CGFloat green;
+@property CGFloat alpha;
 
 + (NSString *)parseClassName;
 

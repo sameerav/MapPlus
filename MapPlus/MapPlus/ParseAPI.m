@@ -45,10 +45,15 @@
 
 + (NSSet *) getPinsAllTime
 {
-    //implement this
-    NSArray *pinArray = [NSArray array];
-    [Pin fetchAll:pinArray];
+    //    NSArray *pinArray = [NSArray array];
+    //[Pin fetchAll:pinArray];
+    PFQuery *query = [PFQuery queryWithClassName:@"Pin"];
+    NSArray *pinArray = [query findObjects];
     NSSet *pinSet = [NSSet setWithArray:pinArray];
+    for (Pin *pin in pinSet) {
+        [pin setUpFromParse];
+    }
+//    NSLog(@"Retrived %f items", [pinSet count]);
     return pinSet;
 }
 
@@ -56,20 +61,60 @@
 {
     NSSet *allPinSet = [self getPinsAllTime];
     NSSet *pins = [allPinSet objectsPassingTest:^(id obj, BOOL *stop) {
-        NSDate *pinDate = ((Pin *)obj).date;
+        Pin *pin = (Pin *)obj;
+        NSDate *pinDate = pin.date;
         if (([pinDate earlierDate:endDate] == pinDate) && ([pinDate laterDate:startDate] == pinDate)) {
             return YES;
         } else {
             return NO;
         }
     }];
+//    NSLog(@"Retried %f items", [pins count]);
     return pins;
 }
 
 // methods to store pins
 + (BOOL) savePin:(Pin *)pin
 {
-    return [pin saveInBackground];
+//    PFObject *PFPin = [PFObject objectWithClassName:@"Pin"];
+//    PFPin[@"date"] = pin.date;
+//    PFPin[@"text"] = @"";
+//    PFPin[@"latitude"] = @(pin.position.latitude);
+//    PFPin[@"longitude"] = @(pin.position.longitude);
+//    CGFloat red;
+//    CGFloat blue;
+//    CGFloat green;
+//    CGFloat alpha;
+//    [pin.color getRed:&red green:&green blue:&blue alpha:&alpha];
+//    PFPin[@"red"] = @(red);
+//    PFPin[@"blue"] = @(blue);
+//    PFPin[@"green"] = @(green);
+//    PFPin[@"alpha"] = @(alpha);
+//    PFPin[@"X-Parse-Installation-Id"] = @"";
+    
+    PFObject *PFPin = [PFObject objectWithClassName:@"MapViewController"];
+    
+//    ((Pin *)PFPin).color = pin.color;
+//    ((Pin *)PFPin).pinMarker = pin.pinMarker;
+//    ((Pin *)PFPin).colorString = @"";
+//    ((Pin *)PFPin).userID = @5;
+//    ((Pin *)PFPin).position = pin.position;
+    
+//    [PFPin setObject:@"" forKey:@"color"];
+//    [PFPin setObject:@"" forKey:@"pinMarker"];
+//    [PFPin setObject:@"" forKey:@"colorString"];
+//    [PFPin setObject:@"" forKey:@"userID"];
+//    [PFPin setObject:@"" forKey:@"position"];
+
+    
+    [PFPin saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+     {
+         NSLog(@"YAYAYYAYYA");
+         NSLog(@"error: %@", error);
+     }];
+
+    return YES;
+    
 }
 
 @end
