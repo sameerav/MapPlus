@@ -207,9 +207,17 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
         
     }
     
-    [self.pins unionSet:newPins];
-    
     // FILTER THE PINS HERE BASED ON THE FILTER SETTINGS
+    // Uncomment when able to retrieve from parse
+    /*for (Pin *pin in self.pins) {
+        if (![newPins containsObject:pin]) {
+            pin.pinMarker.map = nil;
+        } else {
+            pin.pinMarker.map = self.mapView;
+        }
+    }*/
+    
+    [self.pins unionSet:newPins];
 }
 
 - (GMSMarker *)createPinMarker:(Pin *)pin;
@@ -221,7 +229,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     marker.snippet = pin.text;
     marker.title = pin.colorString;
     marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map = self.mapView;
+    //marker.map = self.mapView; // puts marker on the map immediately
     
     return marker;
 }
