@@ -65,7 +65,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSDictionary *dict = @{
+                           @"Angry": [UIColor redColor],
+                           @"Energetic": [UIColor orangeColor],
+                           @"Sad": [UIColor yellowColor],
+                           @"Happy": [UIColor greenColor],
+                           @"Jealous": [UIColor blueColor],
+                           @"Optimistic": [UIColor purpleColor]
+                           };
+    NSDictionary *otherdict = @{
+                           @"Angry": self.angryButton,
+                           @"Energetic": self.energeticButton,
+                           @"Sad": self.sadButton,
+                           @"Happy": self.happyButton,
+                           @"Jealous": self.jealousButton,
+                           @"Optimistic": self.optimisticButton
+                           };
+    for (NSString *emotion in self.emotionFilter) {
+        UIButton *button = otherdict[emotion];
+        [button setBackgroundColor:dict[emotion]];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
