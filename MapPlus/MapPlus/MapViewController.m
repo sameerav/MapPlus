@@ -145,8 +145,10 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     
     cpvc.saveBlock = ^(Pin *pin) {
         [self dismissViewControllerAnimated:YES completion:^{
-            if (!pin.pinMarker) {
+            if (pin && !pin.pinMarker) {
                 pin.pinMarker = [self createPinMarker:pin];
+            } else {
+                [self presentViewController:nc animated:YES completion:nil];
             }
             
             //[ParseAPI savePin:pin];

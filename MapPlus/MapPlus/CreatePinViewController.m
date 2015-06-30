@@ -9,7 +9,6 @@
 #import "CreatePinViewController.h"
 #import "Pin.h"
 #import "ParseAPI.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface CreatePinViewController ()
 
@@ -45,10 +44,6 @@
         self.navigationItem.rightBarButtonItem = doneButton;
         
         self.navigationItem.title = @"Drop a New Pin";
-        
-        [[self.textBox layer] setBorderColor:[[UIColor grayColor] CGColor]];
-        [[self.textBox layer] setBorderWidth:2.3];
-        [[self.textBox layer] setCornerRadius:15];
     }
     
     return self;
