@@ -93,7 +93,7 @@
 {
     [self.emotionFilterControl insertSegmentWithTitle:@"Anger" atIndex:0 animated:NO];
     [self.emotionFilterControl insertSegmentWithTitle:@"Happiness" atIndex:1 animated:NO];
-    [self.emotionFilterControl insertSegmentWithTitle:@"Energy" atIndex:2 animated:NO];
+    [self.emotionFilterControl insertSegmentWithTitle:@"Satisfaction" atIndex:2 animated:NO];
     [self.emotionFilterControl insertSegmentWithTitle:@"Optimism" atIndex:3 animated:NO];
     [self.emotionFilterControl insertSegmentWithTitle:@"Sadness" atIndex:4 animated:YES];
     [self.emotionFilterControl insertSegmentWithTitle:@"Jealousy" atIndex:5 animated:NO];
