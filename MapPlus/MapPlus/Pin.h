@@ -20,12 +20,12 @@
 - (void)setUpFromParse;
 
 @property (strong, nonatomic) UIColor *color;
-@property (copy, nonatomic)   NSString *colorString;
+@property (copy, nonatomic)   NSString *emotionString;
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) CLLocationCoordinate2D position;
 @property (strong, nonatomic) NSNumber *userID;
+@property (strong, nonatomic) NSString *pinID;
 @property (copy, nonatomic)   NSString *text;
-@property (strong, nonatomic) GMSMarker *pinMarker;
 
 // these properties are so parse can handle storing the pin
 @property float latitude;

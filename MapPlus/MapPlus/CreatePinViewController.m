@@ -9,7 +9,6 @@
 #import "CreatePinViewController.h"
 #import "Pin.h"
 #import "ParseAPI.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface CreatePinViewController ()
 
@@ -17,7 +16,7 @@
 @property (assign, nonatomic) BOOL tag;
 @property (strong, nonatomic) Pin *pin;
 
-@property (weak, nonatomic) IBOutlet UITextView *textBox;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -45,10 +44,6 @@
         self.navigationItem.rightBarButtonItem = doneButton;
         
         self.navigationItem.title = @"Drop a New Pin";
-        
-        [[self.textBox layer] setBorderColor:[[UIColor grayColor] CGColor]];
-        [[self.textBox layer] setBorderWidth:2.3];
-        [[self.textBox layer] setCornerRadius:15];
     }
     
     return self;
@@ -68,16 +63,15 @@
 {
     UIButton *button = (UIButton *)sender;
     
-    NSDictionary *buttonMapping = @{@"Red - Angry"         : @"Angry",
-                                    @"Orange - Energetic"  : @"Energetic",
-                                    @"Yellow - Happy"      : @"Happy",
-                                    @"Green - Jealous"     : @"Jealous",
-                                    @"Blue - Sad"          : @"Sad",
-                                    @"Purple - Optimistic" : @"Optimistic"};
+    NSDictionary *buttonAttributes = @{@1 : @[@"Angry",      [UIColor redColor]],
+                                       @2 : @[@"Energetic",  [UIColor orangeColor]],
+                                       @3 : @[@"Happy",      [UIColor yellowColor]],
+                                       @4 : @[@"Jealous",    [UIColor greenColor]],
+                                       @5 : @[@"Sad",        [UIColor blueColor]],
+                                       @6 : @[@"Optimistic", [UIColor purpleColor]]};
     
-    self.pin.color = button.currentTitleColor;
-    self.pin.colorString = buttonMapping[button.currentTitle];
-    self.pin.text = self.textBox.text;
+    self.pin.emotionString = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][0];
+    self.pin.color = [buttonAttributes objectForKey:[NSNumber numberWithLong:button.tag]][1];
     
     [self dismissViewAndSave];
 }
@@ -93,7 +87,7 @@
 - (void)dismissViewAndSave
 {
     if (self.saveBlock) {
-        self.pin.text = self.textBox.text;
+        self.pin.text = self.textField.text;
         self.saveBlock(self.pin);
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];

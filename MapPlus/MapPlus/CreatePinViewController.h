@@ -14,5 +14,6 @@
 
 @property (copy, nonatomic) void (^saveBlock)(Pin *);
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location;
+- (IBAction)addPinButtonPressed:(id)sender;
 
 @end
