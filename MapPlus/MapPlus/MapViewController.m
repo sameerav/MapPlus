@@ -8,13 +8,15 @@
 
 #import "MapViewController.h"
 #import "FilterViewController.h"
-@import GoogleMaps;
 #import "CreatePinViewController.h"
+#import "ParseAPI.h"
+#import "Pin.h"
+@import GoogleMaps;
 
 @interface MapViewController ()
 
 @property (strong, nonatomic) GMSMapView *mapView;
-@property (strong, nonatomic) NSMutableDictionary *pins;
+@property (strong, nonatomic) NSMutableSet *pins;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
@@ -28,7 +30,7 @@
     self = [super init];
     
     if (self) {
-        self.pins = [NSMutableDictionary dictionary];
+        self.pins = [NSMutableSet set];
         
         self.navigationItem.title = @"MapPlus";
         
@@ -39,6 +41,13 @@
                                         action:@selector(filterPinButtonPressed:)];
         
         self.navigationItem.leftBarButtonItem = filterPinButton;
+        
+        UIBarButtonItem *refreshPinButton =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                      target:self
+                                                      action:@selector(refreshPinButtonPressed:)];
+        
+        self.navigationItem.rightBarButtonItem = refreshPinButton;
         
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -73,6 +82,13 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self refreshPinsSet];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -91,6 +107,11 @@
     
     [self presentViewController:nc animated:YES completion:nil];
     
+}
+
+- (void)refreshPinButtonPressed:(id)sender
+{
+    [self refreshPinsSet];
 }
 
 // Mark - CLLocationManagerDelegate Methods
@@ -120,16 +141,54 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
+    cpvc.saveBlock = ^(Pin *pin){
+        [self dismissViewControllerAnimated:yes completion:^{
+            if (!pin.pinMarker) {
+                pin.pinMarker = [self createPinMarker:pin];
+            }
+            
+            // Store to Parse
+            
+            [self.pins addObject:pin];
+        }];
+    };
+    
     [self presentViewController:nc animated:YES completion:nil];
+}
 
+
+// Mark - Fetching pins from data store
+
+- (void)refreshPinsSet
+{
+    // Fetch pins from
+    NSSet *newPins = nil;
+    
+    for (Pin* pin in newPins) {
+        if ([self.pins containsObject:pin]) {
+            continue;
+        }
+        
+        if (!pin.pinMarker) {
+            pin.pinMarker = [self createPinMarker:pin];
+        }
+        
+    }
+    
+    [self.pins unionSet:newPins];
+}
+
+- (GMSMarker *)createPinMarker:(Pin *)pin
+{
     GMSMarker *marker = [[GMSMarker alloc] init];
-
-    marker.icon = [GMSMarker markerImageWithColor:cpvc.color];
-    marker.position = coordinate;
-    marker.title = @"Gratuitously titled things";
-    marker.snippet = @"Hello World";
+    
+    marker.icon = [GMSMarker markerImageWithColor:pin.color];
+    marker.snippet = pin.text;
+    marker.title = pin.colorString;
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.map = self.mapView;
+    
+    return marker;
 }
 
 @end

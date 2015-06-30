@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @import GoogleMaps;
+@class Pin;
 
 @interface CreatePinViewController : UIViewController
 
@@ -22,5 +23,7 @@
 - (IBAction)addBluePin:(id)sender;
 - (IBAction)addPurplePin:(id)sender;
 - (IBAction)cancel:(id)sender;
+
+@property (nonatomic, copy) void (^saveBlock)(Pin *);
 
 @end
