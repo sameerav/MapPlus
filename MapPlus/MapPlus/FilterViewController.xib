@@ -47,54 +47,55 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-xd-OLD">
-                    <rect key="frame" x="268" y="330" width="65" height="30"/>
+                    <rect key="frame" x="0.0" y="369" width="600" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Energetic">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="TzK-hP-bLC"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-R3-I4j">
-                    <rect key="frame" x="357" y="330" width="65" height="30"/>
+                    <rect key="frame" x="0.0" y="447" width="600" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Happy">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="pk7-sb-c0Z"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urL-Fc-rMK">
-                    <rect key="frame" x="179" y="330" width="65" height="30"/>
+                    <rect key="frame" x="0.0" y="329" width="600" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Angry">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="1Ue-3z-eua"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-9u-NbM">
-                    <rect key="frame" x="174" y="384" width="70" height="30"/>
+                    <rect key="frame" x="0.0" y="487" width="600" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Jealous">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="AMk-KO-PfU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-PX-gRb">
-                    <rect key="frame" x="355" y="384" width="70" height="30"/>
-                    <state key="normal" title="Optimistic">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="eIW-bQ-wsk"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-pf-dic">
-                    <rect key="frame" x="265" y="384" width="70" height="30"/>
+                    <rect key="frame" x="0.0" y="409" width="600" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Sad">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="iHY-b2-TAb"/>
@@ -106,7 +107,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="107" id="3ht-pb-D87"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
                     <state key="normal" title="No filter">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,41 +116,96 @@
                         <action selector="filterByDate:" destination="-1" eventType="touchUpInside" id="Pr9-uL-Evs"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-PX-gRb">
+                    <rect key="frame" x="0.0" y="527" width="600" height="30"/>
+                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Optimistic">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="eIW-bQ-wsk"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="urL-Fc-rMK" secondAttribute="trailing" constant="24" id="0te-Df-6rq"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="24" id="2uS-D1-zfQ"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="top" id="3cF-DE-8iU"/>
+                <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="bottom" constant="10" id="4GH-NY-OHH"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="n0R-9u-NbM" secondAttribute="trailing" id="5Wj-1X-XhI"/>
+                <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="7Da-Eo-8h5"/>
+                <constraint firstItem="eZg-pf-dic" firstAttribute="top" secondItem="x9l-xd-OLD" secondAttribute="bottom" constant="10" id="7Lb-RA-ap0"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="eZg-pf-dic" secondAttribute="trailing" id="7jW-Ih-tM6"/>
+                <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="103" id="7pK-5l-uqO"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="top" id="9bY-dQ-DjT"/>
+                <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="bottom" constant="10" id="AdJ-ID-YHU"/>
+                <constraint firstItem="urL-Fc-rMK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BaV-uh-7NZ"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="A8d-PX-gRb" secondAttribute="leading" id="Cgl-wi-okn"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="width" secondItem="Zjq-s7-BJp" secondAttribute="width" id="EBJ-P2-Bv1"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="urL-Fc-rMK" secondAttribute="trailing" id="EOG-r6-a5a"/>
                 <constraint firstAttribute="trailing" secondItem="PSc-zq-OxU" secondAttribute="trailing" constant="8" id="F2f-6Z-Nuq"/>
+                <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="n0R-9u-NbM" secondAttribute="bottom" constant="10" id="Gi5-g0-Zla"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="I0B-23-fZ3"/>
                 <constraint firstAttribute="centerX" secondItem="4J0-qQ-lgR" secondAttribute="centerX" id="K5x-wD-jRC"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="leading" secondItem="Zjq-s7-BJp" secondAttribute="trailing" constant="10" id="NvS-j1-sV7"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="width" secondItem="x9l-xd-OLD" secondAttribute="width" id="Q4A-St-ztQ"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="10" id="Qu1-fb-0n8"/>
                 <constraint firstAttribute="centerX" secondItem="x9l-xd-OLD" secondAttribute="centerX" id="RaV-Pw-eDL"/>
                 <constraint firstAttribute="centerX" secondItem="fgG-Kf-7Jt" secondAttribute="centerX" id="RlL-eO-jWr"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="n0R-9u-NbM" secondAttribute="leading" id="T3u-E9-nYt"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="urL-Fc-rMK" secondAttribute="leading" id="Tus-0f-gWz"/>
+                <constraint firstAttribute="trailing" secondItem="urL-Fc-rMK" secondAttribute="trailing" id="VRp-hO-WLx"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="centerX" secondItem="urL-Fc-rMK" secondAttribute="centerX" constant="-2.5" id="Xkc-pR-Stn"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="width" secondItem="Sap-R3-I4j" secondAttribute="width" id="Y1J-SG-wGL"/>
                 <constraint firstItem="Sap-R3-I4j" firstAttribute="leading" secondItem="x9l-xd-OLD" secondAttribute="trailing" constant="24" id="YTm-tD-9it"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="A8d-PX-gRb" secondAttribute="trailing" id="Yv0-4D-Ae5"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="centerX" secondItem="Sap-R3-I4j" secondAttribute="centerX" id="ZDk-mt-MeG"/>
                 <constraint firstItem="K1Z-5M-Xv6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZQD-Xx-GVA"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="Sap-R3-I4j" secondAttribute="trailing" id="aYz-tz-3Dr"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="Sap-R3-I4j" secondAttribute="leading" id="bug-7f-KaV"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="top" id="ewo-AP-Zh5"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="width" secondItem="eZg-pf-dic" secondAttribute="width" id="i0F-fe-RLu"/>
                 <constraint firstItem="K1Z-5M-Xv6" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="24" id="jN6-bC-fQc"/>
                 <constraint firstItem="Zjq-s7-BJp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="188" id="jYB-kL-rYu"/>
+                <constraint firstItem="Sap-R3-I4j" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="10" id="joO-5c-cvy"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="top" secondItem="Zjq-s7-BJp" secondAttribute="top" id="mtP-Gf-wtQ"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="width" secondItem="eZg-pf-dic" secondAttribute="width" id="myD-wU-3ld"/>
                 <constraint firstItem="Zjq-s7-BJp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ne4-iH-5yp"/>
                 <constraint firstAttribute="trailing" secondItem="K1Z-5M-Xv6" secondAttribute="trailing" id="pBd-rv-4Pd"/>
+                <constraint firstItem="Sap-R3-I4j" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="bottom" constant="8" id="pGa-Kn-z9j"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="79" id="qAG-n7-RuP"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="eZg-pf-dic" secondAttribute="leading" id="tUC-RB-xpf"/>
                 <constraint firstAttribute="centerY" secondItem="4J0-qQ-lgR" secondAttribute="centerY" id="tZ9-Jr-ElV"/>
                 <constraint firstAttribute="centerX" secondItem="eZg-pf-dic" secondAttribute="centerX" id="x7R-WW-qe1"/>
                 <constraint firstItem="fgG-Kf-7Jt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="yDN-ma-8Ra"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="top" id="yQV-pA-WDz"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="I0B-23-fZ3"/>
+                    <exclude reference="Q4A-St-ztQ"/>
+                    <exclude reference="0te-Df-6rq"/>
+                    <exclude reference="3cF-DE-8iU"/>
+                    <exclude reference="9bY-dQ-DjT"/>
+                    <exclude reference="RaV-Pw-eDL"/>
+                    <exclude reference="Y1J-SG-wGL"/>
+                    <exclude reference="x7R-WW-qe1"/>
+                    <exclude reference="YTm-tD-9it"/>
+                    <exclude reference="joO-5c-cvy"/>
+                    <exclude reference="2uS-D1-zfQ"/>
+                    <exclude reference="7pK-5l-uqO"/>
+                    <exclude reference="Xkc-pR-Stn"/>
+                    <exclude reference="ewo-AP-Zh5"/>
+                    <exclude reference="myD-wU-3ld"/>
+                    <exclude reference="AdJ-ID-YHU"/>
+                    <exclude reference="ZDk-mt-MeG"/>
+                    <exclude reference="i0F-fe-RLu"/>
+                    <exclude reference="yQV-pA-WDz"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="1165" y="525"/>
         </view>
     </objects>

@@ -66,37 +66,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self highlightSelectedButtons];
-    
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)highlightSelectedButtons
-{
-    UIColor *selectedColor = [UIColor blueColor];
-    UIColor *deselectedColor = [UIColor grayColor];
-    
-    
-    
-    
-    NSArray *buttons = @[self.angryButton,
-                         self.energeticButton,
-                         self.happyButton,
-                         self.jealousButton,
-                         self.sadButton,
-                         self.optimisticButton];
-    
-    for (UIButton *button in buttons) {
-        if ([self.emotionFilter containsObject:button.currentTitle]) {
-            [button setTitleColor:selectedColor
-                         forState:UIControlStateNormal];
-        } else {
-            [button setTitleColor:deselectedColor
-                         forState:UIControlStateNormal];
-        }
-    }
-    
-}
 - (IBAction)filterByDate:(id)sender {
     UIButton *button = (UIButton *)sender;
     NSString *currentText = button.currentTitle;
@@ -114,7 +86,7 @@
         self.dateFilter = @"day";
     } else if ([currentText isEqualToString:@"Last day"]) {
         [button setTitle:@"No filter" forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor grayColor];
+        button.backgroundColor = [UIColor lightGrayColor];
         self.dateFilter = @"";
     }
 }
@@ -125,11 +97,22 @@
     
     if ([self.emotionFilter containsObject:button.currentTitle]) {
         [self.emotionFilter removeObject:button.currentTitle];
+        
+        [button setBackgroundColor:[UIColor lightGrayColor]];
+        
     } else {
         [self.emotionFilter addObject:button.currentTitle];
+        NSDictionary *dict = @{
+                               @"Angry": [UIColor redColor],
+                               @"Energetic": [UIColor orangeColor],
+                               @"Sad": [UIColor yellowColor],
+                               @"Happy": [UIColor greenColor],
+                               @"Jealous": [UIColor blueColor],
+                               @"Optimistic": [UIColor purpleColor]
+                               };
+        UIColor *color = dict[button.currentTitle];
+        [button setBackgroundColor:color];
     }
-    
-    [self highlightSelectedButtons];
 }
 
 - (void)applyButtonPressed:(id)sender
