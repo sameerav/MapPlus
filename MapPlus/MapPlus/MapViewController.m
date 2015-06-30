@@ -142,7 +142,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
-    cpvc.saveBlock = ^(Pin *pin){
+    cpvc.saveBlock = ^(Pin *pin) {
         [self dismissViewControllerAnimated:YES completion:^{
             if (!pin.pinMarker) {
                 pin.pinMarker = [self createPinMarker:pin];

@@ -15,7 +15,8 @@
 
 - (instancetype)initWithUser:(NSNumber *)userID
                         date:(NSDate *)date
-                    location:(CLLocationCoordinate2D)position;
+                    location:(CLLocationCoordinate2D)position
+                       color:(UIColor *)color;
 
 @property (strong, nonatomic) UIColor *color;
 @property (copy, nonatomic)   NSString *colorString;

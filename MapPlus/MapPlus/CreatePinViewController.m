@@ -12,9 +12,7 @@
 
 @interface CreatePinViewController ()
 
-@property CLLocationCoordinate2D location;
-
-- (Pin *)createPin;
+@property (nonatomic) CLLocationCoordinate2D location;
 
 @end
 
@@ -29,12 +27,15 @@
                                                                                     action:@selector(cancelButtonPressed:)];
         self.navigationItem.leftBarButtonItem = cancelItem;
         
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self
                                                                                     action:@selector(doneButtonPressed:)];
-        self.navigationItem.rightBarButtonItem = doneButton;
+        
+        self.navigationItem.rightBarButtonItem = doneItem;
         
         self.navigationItem.title = @"Drop a New Pin";
+        
+        self.text.text = @"How are you feeling?";
     }
     return self;
 }
@@ -59,53 +60,27 @@
 }
 */
 
-- (IBAction)addRedPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor redColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)addPin:(id)sender {
+    NSDate *date = [[NSDate alloc] init];
+    UIButton *button = (UIButton *)sender;
+    UIColor *color;
+    if (button.tag == 0) {
+        color = [UIColor redColor];
+    } else if (button.tag == 1) {
+        color = [UIColor orangeColor];
+    } else if (button.tag == 2) {
+        color = [UIColor yellowColor];
+    } else if (button.tag == 3) {
+        color = [UIColor greenColor];
+    } else if (button.tag == 4) {
+        color = [UIColor blueColor];
+    } else if (button.tag == 5) {
+        color = [UIColor purpleColor];
+    }
+    self.pin = [[Pin alloc] initWithUser:0000000 date:date location:self.location color:color];
+    
 }
 
-- (IBAction)addOrangePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor orangeColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addYellowPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor yellowColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addGreenPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor greenColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addBluePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor blueColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addPurplePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor purpleColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -113,16 +88,11 @@
 
 - (void)doneButtonPressed:(id)sender {
     if (self.saveBlock) {
+        self.pin.text = self.text.text;
         self.saveBlock(self.pin);
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-}
-
-- (Pin *)createPin {
-    NSDate *date = [[NSDate alloc] init];
-    self.pin = [[Pin alloc] initWithUser:000000 date:date location:self.location];
-    return self.pin;
 }
 
 @end

@@ -12,19 +12,14 @@
 
 @interface CreatePinViewController : UIViewController
 
-@property (weak, nonatomic) UIColor *color;
+@property (strong, nonatomic) UIColor *color;
 @property (nonatomic) BOOL tag;
 @property (strong, nonatomic) Pin *pin;
 
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location;
-- (IBAction)addRedPin:(id)sender;
-- (IBAction)addOrangePin:(id)sender;
-- (IBAction)addYellowPin:(id)sender;
-- (IBAction)addGreenPin:(id)sender;
-- (IBAction)addBluePin:(id)sender;
-- (IBAction)addPurplePin:(id)sender;
-- (IBAction)cancel:(id)sender;
+- (IBAction)addPin:(id)sender;
 
 @property (nonatomic, copy) void (^saveBlock)(Pin *);
+@property (weak, nonatomic) IBOutlet UITextView *text;
 
 @end
