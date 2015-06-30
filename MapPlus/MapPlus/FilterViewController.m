@@ -11,9 +11,6 @@
 
 @interface FilterViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *yearButton;
-@property (weak, nonatomic) IBOutlet UIButton *monthButton;
-@property (weak, nonatomic) IBOutlet UIButton *dayButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *angryButton;
@@ -79,29 +76,7 @@
     UIColor *selectedColor = [UIColor blueColor];
     UIColor *deselectedColor = [UIColor grayColor];
     
-    if ([self.dateFilter isEqualToString:@"year"]) {
-        [self.yearButton setTitleColor:selectedColor
-                              forState:UIControlStateNormal];
-    } else {
-        [self.yearButton setTitleColor:deselectedColor
-                              forState:UIControlStateNormal];
-    }
     
-    if ([self.dateFilter isEqualToString:@"month"]) {
-        [self.monthButton setTitleColor:selectedColor
-                              forState:UIControlStateNormal];
-    } else {
-        [self.monthButton setTitleColor:deselectedColor
-                              forState:UIControlStateNormal];
-    }
-    
-    if ([self.dateFilter isEqualToString:@"day"]) {
-        [self.dayButton setTitleColor:selectedColor
-                              forState:UIControlStateNormal];
-    } else {
-        [self.dayButton setTitleColor:deselectedColor
-                              forState:UIControlStateNormal];
-    }
     
     
     NSArray *buttons = @[self.angryButton,
@@ -122,27 +97,26 @@
     }
     
 }
-
-- (IBAction)dateFilterButtonPressed:(id)sender
-{
+- (IBAction)filterByDate:(id)sender {
     UIButton *button = (UIButton *)sender;
-    if ([button.currentTitle isEqualToString:@"Last Year"]) {
+    NSString *currentText = button.currentTitle;
+    if ([currentText isEqualToString:@"No filter"]) {
+        [button setTitle:@"Last year" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor greenColor];
         self.dateFilter = @"year";
-    }
-    
-    if ([button.currentTitle isEqualToString:@"Last Month"]) {
+    } else if ([currentText isEqualToString:@"Last year"]) {
+        [button setTitle:@"Last month" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor blueColor];
         self.dateFilter = @"month";
-    }
-    
-    if ([button.currentTitle isEqualToString:@"Last Day"]) {
+    } else if ([currentText isEqualToString:@"Last month"]) {
+        [button setTitle:@"Last day" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor purpleColor];
         self.dateFilter = @"day";
-    }
-    
-    if ([button.currentTitle isEqualToString:@"Clear Filter"]) {
+    } else if ([currentText isEqualToString:@"Last day"]) {
+        [button setTitle:@"No filter" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor grayColor];
         self.dateFilter = @"";
     }
-    
-    [self highlightSelectedButtons];
 }
 
 - (IBAction)emotionFilterButtonPressed:(id)sender

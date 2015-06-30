@@ -7,16 +7,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController">
             <connections>
                 <outlet property="angryButton" destination="urL-Fc-rMK" id="bnR-DT-04V"/>
-                <outlet property="clearButton" destination="5K0-gJ-jLO" id="uxA-ok-fsf"/>
-                <outlet property="dayButton" destination="VZf-Cb-miZ" id="7sn-17-8QZ"/>
                 <outlet property="energeticButton" destination="x9l-xd-OLD" id="qKK-Jn-u14"/>
                 <outlet property="happyButton" destination="Sap-R3-I4j" id="bs0-Gt-Um6"/>
                 <outlet property="jealousButton" destination="n0R-9u-NbM" id="34I-D7-LMj"/>
-                <outlet property="monthButton" destination="x1a-20-lva" id="PdA-Yr-I1u"/>
                 <outlet property="optimisticButton" destination="A8d-PX-gRb" id="6vE-sh-8fF"/>
                 <outlet property="sadButton" destination="eZg-pf-dic" id="9bQ-L5-jfU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="yearButton" destination="9Mr-l7-0aD" id="dj7-g0-uAZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,60 +27,21 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjq-s7-BJp">
-                    <rect key="frame" x="8" y="188" width="287" height="32"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjq-s7-BJp">
+                    <rect key="frame" x="8" y="188" width="287" height="30"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mr-l7-0aD">
-                    <rect key="frame" x="16" y="128" width="64" height="30"/>
-                    <state key="normal" title="Last Year">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="dateFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="tZb-EB-qma"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1a-20-lva">
-                    <rect key="frame" x="261" y="128" width="78" height="30"/>
-                    <state key="normal" title="Last Month">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="dateFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="sT1-8w-5sV"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZf-Cb-miZ">
-                    <rect key="frame" x="523" y="128" width="61" height="30"/>
-                    <state key="normal" title="Last Day">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="dateFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="wsi-3d-rG4"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Emotion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-qQ-lgR">
-                    <rect key="frame" x="234" y="289" width="132" height="21"/>
+                    <rect key="frame" x="234" y="289" width="131.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K0-gJ-jLO">
-                    <rect key="frame" x="263" y="240" width="75" height="30"/>
-                    <state key="normal" title="Clear Filter">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="dateFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="CMf-Pa-lFs"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter by Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-Kf-7Jt">
-                    <rect key="frame" x="249" y="88" width="103" height="21"/>
+                    <rect key="frame" x="249" y="88" width="102.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -143,6 +100,21 @@
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="iHY-b2-TAb"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-5M-Xv6">
+                    <rect key="frame" x="0.0" y="133" width="600" height="107"/>
+                    <color key="backgroundColor" red="0.87174479166666663" green="0.87174479166666663" blue="0.87174479166666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="107" id="3ht-pb-D87"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                    <state key="normal" title="No filter">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="filterByDate:" destination="-1" eventType="touchUpInside" id="Pr9-uL-Evs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -152,32 +124,28 @@
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="top" id="9bY-dQ-DjT"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="width" secondItem="Zjq-s7-BJp" secondAttribute="width" id="EBJ-P2-Bv1"/>
                 <constraint firstAttribute="trailing" secondItem="PSc-zq-OxU" secondAttribute="trailing" constant="8" id="F2f-6Z-Nuq"/>
-                <constraint firstAttribute="centerX" secondItem="x1a-20-lva" secondAttribute="centerX" id="FAJ-Ts-o5X"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="I0B-23-fZ3"/>
-                <constraint firstItem="x1a-20-lva" firstAttribute="top" secondItem="VZf-Cb-miZ" secondAttribute="top" id="JQD-4z-IGs"/>
                 <constraint firstAttribute="centerX" secondItem="4J0-qQ-lgR" secondAttribute="centerX" id="K5x-wD-jRC"/>
-                <constraint firstAttribute="centerX" secondItem="5K0-gJ-jLO" secondAttribute="centerX" id="La3-3W-78Z"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="leading" secondItem="Zjq-s7-BJp" secondAttribute="trailing" constant="10" id="NvS-j1-sV7"/>
-                <constraint firstItem="5K0-gJ-jLO" firstAttribute="top" secondItem="Zjq-s7-BJp" secondAttribute="bottom" constant="20" id="P6O-08-iuu"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="width" secondItem="x9l-xd-OLD" secondAttribute="width" id="Q4A-St-ztQ"/>
                 <constraint firstAttribute="centerX" secondItem="x9l-xd-OLD" secondAttribute="centerX" id="RaV-Pw-eDL"/>
                 <constraint firstAttribute="centerX" secondItem="fgG-Kf-7Jt" secondAttribute="centerX" id="RlL-eO-jWr"/>
-                <constraint firstAttribute="trailing" secondItem="VZf-Cb-miZ" secondAttribute="trailing" constant="16" id="UDG-tQ-20o"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="centerX" secondItem="urL-Fc-rMK" secondAttribute="centerX" constant="-2.5" id="Xkc-pR-Stn"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="width" secondItem="Sap-R3-I4j" secondAttribute="width" id="Y1J-SG-wGL"/>
                 <constraint firstItem="Sap-R3-I4j" firstAttribute="leading" secondItem="x9l-xd-OLD" secondAttribute="trailing" constant="24" id="YTm-tD-9it"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="centerX" secondItem="Sap-R3-I4j" secondAttribute="centerX" id="ZDk-mt-MeG"/>
-                <constraint firstItem="9Mr-l7-0aD" firstAttribute="top" secondItem="x1a-20-lva" secondAttribute="top" id="bxR-b9-cAH"/>
+                <constraint firstItem="K1Z-5M-Xv6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZQD-Xx-GVA"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="top" id="ewo-AP-Zh5"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="width" secondItem="eZg-pf-dic" secondAttribute="width" id="i0F-fe-RLu"/>
-                <constraint firstItem="Zjq-s7-BJp" firstAttribute="top" secondItem="9Mr-l7-0aD" secondAttribute="bottom" constant="30" id="jYh-ii-Ubz"/>
+                <constraint firstItem="K1Z-5M-Xv6" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="24" id="jN6-bC-fQc"/>
+                <constraint firstItem="Zjq-s7-BJp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="188" id="jYB-kL-rYu"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="top" secondItem="Zjq-s7-BJp" secondAttribute="top" id="mtP-Gf-wtQ"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="width" secondItem="eZg-pf-dic" secondAttribute="width" id="myD-wU-3ld"/>
                 <constraint firstItem="Zjq-s7-BJp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ne4-iH-5yp"/>
-                <constraint firstItem="9Mr-l7-0aD" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="20" id="pAd-vw-J2Q"/>
+                <constraint firstAttribute="trailing" secondItem="K1Z-5M-Xv6" secondAttribute="trailing" id="pBd-rv-4Pd"/>
+                <constraint firstItem="PSc-zq-OxU" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="79" id="qAG-n7-RuP"/>
                 <constraint firstAttribute="centerY" secondItem="4J0-qQ-lgR" secondAttribute="centerY" id="tZ9-Jr-ElV"/>
                 <constraint firstAttribute="centerX" secondItem="eZg-pf-dic" secondAttribute="centerX" id="x7R-WW-qe1"/>
-                <constraint firstItem="9Mr-l7-0aD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="xWx-f3-Pa5"/>
                 <constraint firstItem="fgG-Kf-7Jt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="yDN-ma-8Ra"/>
                 <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="top" id="yQV-pA-WDz"/>
             </constraints>
