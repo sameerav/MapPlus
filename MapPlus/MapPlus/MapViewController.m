@@ -229,7 +229,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     marker.snippet = pin.text;
     marker.title = pin.colorString;
     marker.appearAnimation = kGMSMarkerAnimationPop;
-    //marker.map = self.mapView; // puts marker on the map immediately
+    marker.map = self.mapView; // puts marker on the map immediately
     
     return marker;
 }
