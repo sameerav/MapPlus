@@ -32,7 +32,7 @@
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self
                                                                                     action:@selector(doneButtonPressed:)];
-        self.navigationItem.rightBarButtonItem = doneItem;
+        self.navigationItem.rightBarButtonItem = doneButton;
         
         self.navigationItem.title = @"Drop a New Pin";
     }
@@ -121,8 +121,8 @@
 
 - (Pin *)createPin {
     NSDate *date = [[NSDate alloc] init];
-    Pin *pin = [[Pin alloc] initWithUser:000000 date:date location:self.location];
-    return pin;
+    self.pin = [[Pin alloc] initWithUser:000000 date:date location:self.location];
+    return self.pin;
 }
 
 @end

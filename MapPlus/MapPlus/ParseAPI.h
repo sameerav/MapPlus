@@ -12,12 +12,12 @@
 
 @interface ParseAPI : NSObject
 // methods to get pins
-- (NSSet *) getPin24HoursOld;
-- (NSSet *) getPinWeekOld;
-- (NSSet *) getPinMonthOld;
-- (NSSet *) getPinsYearOld;
-- (NSSet *) getPinsAllTime;
-- (NSSet *) getPinsFromDate: (NSDate *)startDate toDate:(NSDate *)endDate;
++ (NSSet *) getPin24HoursOld;
++ (NSSet *) getPinWeekOld;
++ (NSSet *) getPinMonthOld;
++ (NSSet *) getPinsYearOld;
++ (NSSet *) getPinsAllTime;
++ (NSSet *) getPinsFromDate: (NSDate *)startDate toDate:(NSDate *)endDate;
 
 // methods to store pins
 + (BOOL) savePin:(Pin *)pin;

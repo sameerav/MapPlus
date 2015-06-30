@@ -25,6 +25,7 @@
 
 @implementation MapViewController
 
+
 - (instancetype)init
 {
     self = [super init];
@@ -85,7 +86,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self refreshPinsSet];
 }
 
@@ -100,6 +100,7 @@
     NSLog(@"Filter Pin Button Pressed");
     
     FilterViewController *fvc = [[FilterViewController alloc] init];
+    fvc.mvc = self;
     
     UINavigationController *nc =
     [[UINavigationController alloc] initWithRootViewController:fvc];
@@ -142,7 +143,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
     cpvc.saveBlock = ^(Pin *pin){
-        [self dismissViewControllerAnimated:yes completion:^{
+        [self dismissViewControllerAnimated:YES completion:^{
             if (!pin.pinMarker) {
                 pin.pinMarker = [self createPinMarker:pin];
             }
@@ -162,7 +163,28 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 - (void)refreshPinsSet
 {
     // Fetch pins from
-    NSSet *newPins = nil;
+    NSSet *newPins;
+    if (self.timeFilter) {
+        if ([self.timeFilter isEqualToString:@"day"]) {
+            newPins = [ParseAPI getPin24HoursOld];
+        } else if ([self.timeFilter isEqualToString:@"month"]) {
+            newPins = [ParseAPI getPinMonthOld];
+        } else if ([self.timeFilter isEqualToString:@"year"]){
+            newPins = [ParseAPI getPinsYearOld];
+        }
+    } else {
+        newPins = [ParseAPI getPinsAllTime];
+    }
+    if (self.emotionFilter) {
+        [self.pins objectsPassingTest:^(id obj, BOOL *stop) {
+            NSDictionary *colorDict = @{@"red": [UIColor redColor], @"orange": [UIColor orangeColor], @"yellow": [UIColor yellowColor], @"green": [UIColor greenColor], @"blue": [UIColor blueColor], @"purple": [UIColor purpleColor]};
+            if ([colorDict[self.emotionFilter] isEqual:((Pin *)obj).color]) {
+                return YES;
+            } else {
+                return NO;
+            }
+        }];
+    }
     
     for (Pin* pin in newPins) {
         if ([self.pins containsObject:pin]) {
@@ -176,6 +198,8 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     }
     
     [self.pins unionSet:newPins];
+    
+    // FILTER THE PINS HERE BASED ON THE FILTER SETTINGS
 }
 
 - (GMSMarker *)createPinMarker:(Pin *)pin

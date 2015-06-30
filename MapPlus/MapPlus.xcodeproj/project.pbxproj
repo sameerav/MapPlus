@@ -16,12 +16,11 @@
 		4CC5A4BD1B41C2F500376356 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5A4BB1B41C2F500376356 /* LaunchScreen.xib */; };
 		4CC5A4C91B41C2F500376356 /* MapPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4C81B41C2F500376356 /* MapPlusTests.m */; };
 		4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A4D31B41C7E000376356 /* MapViewController.m */; };
-		6DBDB8A6E44E788881FC0954 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BAA90BA30D8351301FD24 /* libPods.a */; };
+		A67B35821B41ECD800D5CF43 /* CreatePinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67B35801B41ECD800D5CF43 /* CreatePinViewController.m */; };
+		A67B35831B41ECD800D5CF43 /* CreatePinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67B35811B41ECD800D5CF43 /* CreatePinViewController.xib */; };
 		EA4A0FC21B4200A6000A70C3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A0FBF1B4200A6000A70C3 /* FBSDKCoreKit.framework */; };
 		EA4A0FC31B4200A6000A70C3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A0FC01B4200A6000A70C3 /* FBSDKLoginKit.framework */; };
 		EA4A0FC41B4200A6000A70C3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A0FC11B4200A6000A70C3 /* FBSDKShareKit.framework */; };
-		A67B35821B41ECD800D5CF43 /* CreatePinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67B35801B41ECD800D5CF43 /* CreatePinViewController.m */; };
-		A67B35831B41ECD800D5CF43 /* CreatePinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67B35811B41ECD800D5CF43 /* CreatePinViewController.xib */; };
 		EA56C90B1B41C7680030BF12 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90A1B41C7680030BF12 /* ParseAPI.m */; };
 		EA56C90E1B41C79C0030BF12 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56C90D1B41C79C0030BF12 /* Pin.m */; };
 		EA56C9121B41CC8C0030BF12 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9101B41CC8C0030BF12 /* Bolts.framework */; };
@@ -42,7 +41,6 @@
 		EA56C9311B41CD640030BF12 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9301B41CD640030BF12 /* libsqlite3.dylib */; };
 		EA56C9331B41CD6E0030BF12 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9321B41CD6E0030BF12 /* Accounts.framework */; };
 		EA56C9351B41CD730030BF12 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA56C9341B41CD730030BF12 /* Social.framework */; };
-		EAE3889B1B4207F900B16D5F /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */; };
 		EAE3889D1B4208B500B16D5F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE3889C1B4208B500B16D5F /* libstdc++.6.0.9.dylib */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +103,6 @@
 		EA56C9301B41CD640030BF12 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EA56C9321B41CD6E0030BF12 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EA56C9341B41CD730030BF12 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
 		EAE3889C1B4208B500B16D5F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -182,7 +179,6 @@
 				4CBA0C3F1B41FAD3009726B4 /* FilterViewController.xib */,
 				EA56C90C1B41C79C0030BF12 /* Pin.h */,
 				EA56C90D1B41C79C0030BF12 /* Pin.m */,
-				EAE3889A1B4207F900B16D5F /* FBMissingSymbols.m */,
 				A67B357F1B41ECD800D5CF43 /* CreatePinViewController.h */,
 				A67B35801B41ECD800D5CF43 /* CreatePinViewController.m */,
 				A67B35811B41ECD800D5CF43 /* CreatePinViewController.xib */,
@@ -398,7 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE3889B1B4207F900B16D5F /* FBMissingSymbols.m in Sources */,
 				A67B35821B41ECD800D5CF43 /* CreatePinViewController.m in Sources */,
 				4CC5A4D51B41C7E000376356 /* MapViewController.m in Sources */,
 				4CC5A4B21B41C2F500376356 /* AppDelegate.m in Sources */,

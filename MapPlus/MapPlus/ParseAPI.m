@@ -12,7 +12,7 @@
 
 @implementation ParseAPI
 
-- (NSSet *) getPin24HoursOld{
++ (NSSet *) getPin24HoursOld{
     NSDate *now = [NSDate date];
     double timeInterval = 24*60*60*-1;
     NSDate *startDate = [now dateByAddingTimeInterval:timeInterval];
@@ -20,14 +20,14 @@
     
 }
 
-- (NSSet *) getPinWeekOld
++ (NSSet *) getPinWeekOld
 {
     NSDate *now = [NSDate date];
     double timeInterval = 7*24*60*60*-1;
     NSDate *startDate = [now dateByAddingTimeInterval:timeInterval];
     return [self getPinsFromDate:startDate toDate:now];
 }
-- (NSSet *) getPinMonthOld
++ (NSSet *) getPinMonthOld
 {
     NSDate *now = [NSDate date];
     double timeInterval = 30*24*60*60*-1;
@@ -35,7 +35,7 @@
     return [self getPinsFromDate:startDate toDate:now];
 }
 
-- (NSSet *) getPinsYearOld
++ (NSSet *) getPinsYearOld
 {
     NSDate *now = [NSDate date];
     double timeInterval = 365*24*60*60*-1;
@@ -43,7 +43,7 @@
     return [self getPinsFromDate:startDate toDate:now];
 }
 
-- (NSSet *) getPinsAllTime
++ (NSSet *) getPinsAllTime
 {
     //implement this
     NSArray *pinArray = [NSArray array];
@@ -52,7 +52,7 @@
     return pinSet;
 }
 
-- (NSSet *) getPinsFromDate: (NSDate *)startDate toDate:(NSDate *)endDate
++ (NSSet *) getPinsFromDate: (NSDate *)startDate toDate:(NSDate *)endDate
 {
     NSSet *allPinSet = [self getPinsAllTime];
     NSSet *pins = [allPinSet objectsPassingTest:^(id obj, BOOL *stop) {

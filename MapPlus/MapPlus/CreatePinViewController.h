@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) UIColor *color;
 @property (nonatomic) BOOL tag;
+@property (strong, nonatomic) Pin *pin;
 
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location;
 - (IBAction)addRedPin:(id)sender;

@@ -17,7 +17,6 @@
                         date:(NSDate *)date
                     location:(CLLocationCoordinate2D)position;
 
-
 @property (strong, nonatomic) UIColor *color;
 @property (copy, nonatomic)   NSString *colorString;
 @property (strong, nonatomic) NSDate *date;

@@ -33,6 +33,8 @@
 
 @synthesize color;
 @synthesize position;
+@synthesize pinMarker;
+@synthesize colorString;
 
 // this method is required for Pin to subclass Parse's PFObject
 + (NSString *)parseClassName {
@@ -57,6 +59,10 @@
         // change the position into JSON Serializable objects for Parse
         self.latitude = self.position.latitude;
         self.longtitude = self.position.longitude;
+        
+        NSDictionary *colorDict = @{[UIColor redColor]: @"red", [UIColor orangeColor]: @"orange", [UIColor yellowColor]:@"yellow", [UIColor greenColor]:@"green", [UIColor blueColor]:@"blue", [UIColor purpleColor]:@"purple"};
+        self.colorString = colorDict[self.color];
+        
     }
     return self;
 }
