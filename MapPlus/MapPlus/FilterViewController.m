@@ -68,9 +68,9 @@
     NSDictionary *dict = @{
                            @"Angry": [UIColor redColor],
                            @"Energetic": [UIColor orangeColor],
-                           @"Sad": [UIColor yellowColor],
-                           @"Happy": [UIColor greenColor],
-                           @"Jealous": [UIColor blueColor],
+                           @"Sad": [UIColor blueColor],
+                           @"Happy": [UIColor yellowColor],
+                           @"Jealous": [UIColor greenColor],
                            @"Optimistic": [UIColor purpleColor]
                            };
     NSDictionary *otherdict = @{
@@ -124,9 +124,9 @@
         NSDictionary *dict = @{
                                @"Angry": [UIColor redColor],
                                @"Energetic": [UIColor orangeColor],
-                               @"Sad": [UIColor yellowColor],
-                               @"Happy": [UIColor greenColor],
-                               @"Jealous": [UIColor blueColor],
+                               @"Sad": [UIColor blueColor],
+                               @"Happy": [UIColor yellowColor],
+                               @"Jealous": [UIColor greenColor],
                                @"Optimistic": [UIColor purpleColor]
                                };
         UIColor *color = dict[button.currentTitle];

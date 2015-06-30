@@ -35,30 +35,19 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Emotion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-qQ-lgR">
-                    <rect key="frame" x="234" y="289" width="131.5" height="20.5"/>
+                    <rect key="frame" x="234" y="289" width="132" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter by Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-Kf-7Jt">
-                    <rect key="frame" x="249" y="88" width="102.5" height="21"/>
+                    <rect key="frame" x="249" y="88" width="103" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-xd-OLD">
-                    <rect key="frame" x="0.0" y="369" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                    <state key="normal" title="Energetic">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="TzK-hP-bLC"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-R3-I4j">
-                    <rect key="frame" x="0.0" y="447" width="600" height="30"/>
+                    <rect key="frame" x="0.0" y="405" width="600" height="30"/>
                     <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Happy">
@@ -68,19 +57,8 @@
                         <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="pk7-sb-c0Z"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urL-Fc-rMK">
-                    <rect key="frame" x="0.0" y="329" width="600" height="30"/>
-                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                    <state key="normal" title="Angry">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="1Ue-3z-eua"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-9u-NbM">
-                    <rect key="frame" x="0.0" y="487" width="600" height="30"/>
+                    <rect key="frame" x="0.0" y="443" width="600" height="30"/>
                     <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Jealous">
@@ -91,7 +69,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-pf-dic">
-                    <rect key="frame" x="0.0" y="409" width="600" height="30"/>
+                    <rect key="frame" x="0.0" y="481" width="600" height="30"/>
                     <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Sad">
@@ -116,8 +94,30 @@
                         <action selector="filterByDate:" destination="-1" eventType="touchUpInside" id="Pr9-uL-Evs"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-xd-OLD">
+                    <rect key="frame" x="0.0" y="367" width="600" height="30"/>
+                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Energetic">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="TzK-hP-bLC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urL-Fc-rMK">
+                    <rect key="frame" x="0.0" y="329" width="600" height="30"/>
+                    <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Angry">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="emotionFilterButtonPressed:" destination="-1" eventType="touchUpInside" id="1Ue-3z-eua"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-PX-gRb">
-                    <rect key="frame" x="0.0" y="527" width="600" height="30"/>
+                    <rect key="frame" x="0.0" y="519" width="600" height="30"/>
                     <color key="backgroundColor" red="0.87174479169999997" green="0.87174479169999997" blue="0.87174479169999997" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="Optimistic">
@@ -133,10 +133,10 @@
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="urL-Fc-rMK" secondAttribute="trailing" constant="24" id="0te-Df-6rq"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="24" id="2uS-D1-zfQ"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="top" id="3cF-DE-8iU"/>
-                <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="bottom" constant="10" id="4GH-NY-OHH"/>
+                <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="bottom" constant="8" id="4GH-NY-OHH"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="n0R-9u-NbM" secondAttribute="trailing" id="5Wj-1X-XhI"/>
-                <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="7Da-Eo-8h5"/>
-                <constraint firstItem="eZg-pf-dic" firstAttribute="top" secondItem="x9l-xd-OLD" secondAttribute="bottom" constant="10" id="7Lb-RA-ap0"/>
+                <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="19" id="7Da-Eo-8h5"/>
+                <constraint firstItem="eZg-pf-dic" firstAttribute="top" secondItem="x9l-xd-OLD" secondAttribute="bottom" constant="84" id="7Lb-RA-ap0"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="eZg-pf-dic" secondAttribute="trailing" id="7jW-Ih-tM6"/>
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="103" id="7pK-5l-uqO"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="Sap-R3-I4j" secondAttribute="top" id="9bY-dQ-DjT"/>
@@ -146,12 +146,12 @@
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="width" secondItem="Zjq-s7-BJp" secondAttribute="width" id="EBJ-P2-Bv1"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="trailing" secondItem="urL-Fc-rMK" secondAttribute="trailing" id="EOG-r6-a5a"/>
                 <constraint firstAttribute="trailing" secondItem="PSc-zq-OxU" secondAttribute="trailing" constant="8" id="F2f-6Z-Nuq"/>
-                <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="n0R-9u-NbM" secondAttribute="bottom" constant="10" id="Gi5-g0-Zla"/>
+                <constraint firstItem="A8d-PX-gRb" firstAttribute="top" secondItem="n0R-9u-NbM" secondAttribute="bottom" constant="46" id="Gi5-g0-Zla"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="top" secondItem="4J0-qQ-lgR" secondAttribute="bottom" constant="20" id="I0B-23-fZ3"/>
                 <constraint firstAttribute="centerX" secondItem="4J0-qQ-lgR" secondAttribute="centerX" id="K5x-wD-jRC"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="leading" secondItem="Zjq-s7-BJp" secondAttribute="trailing" constant="10" id="NvS-j1-sV7"/>
                 <constraint firstItem="urL-Fc-rMK" firstAttribute="width" secondItem="x9l-xd-OLD" secondAttribute="width" id="Q4A-St-ztQ"/>
-                <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="10" id="Qu1-fb-0n8"/>
+                <constraint firstItem="x9l-xd-OLD" firstAttribute="top" secondItem="urL-Fc-rMK" secondAttribute="bottom" constant="8" id="Qu1-fb-0n8"/>
                 <constraint firstAttribute="centerX" secondItem="x9l-xd-OLD" secondAttribute="centerX" id="RaV-Pw-eDL"/>
                 <constraint firstAttribute="centerX" secondItem="fgG-Kf-7Jt" secondAttribute="centerX" id="RlL-eO-jWr"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="n0R-9u-NbM" secondAttribute="leading" id="T3u-E9-nYt"/>
@@ -174,7 +174,7 @@
                 <constraint firstItem="n0R-9u-NbM" firstAttribute="width" secondItem="eZg-pf-dic" secondAttribute="width" id="myD-wU-3ld"/>
                 <constraint firstItem="Zjq-s7-BJp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ne4-iH-5yp"/>
                 <constraint firstAttribute="trailing" secondItem="K1Z-5M-Xv6" secondAttribute="trailing" id="pBd-rv-4Pd"/>
-                <constraint firstItem="Sap-R3-I4j" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="bottom" constant="8" id="pGa-Kn-z9j"/>
+                <constraint firstItem="Sap-R3-I4j" firstAttribute="top" secondItem="eZg-pf-dic" secondAttribute="bottom" constant="-106" id="pGa-Kn-z9j"/>
                 <constraint firstItem="PSc-zq-OxU" firstAttribute="top" secondItem="fgG-Kf-7Jt" secondAttribute="bottom" constant="79" id="qAG-n7-RuP"/>
                 <constraint firstItem="x9l-xd-OLD" firstAttribute="leading" secondItem="eZg-pf-dic" secondAttribute="leading" id="tUC-RB-xpf"/>
                 <constraint firstAttribute="centerY" secondItem="4J0-qQ-lgR" secondAttribute="centerY" id="tZ9-Jr-ElV"/>

@@ -140,7 +140,7 @@
                 <constraint firstAttribute="trailing" secondItem="Wue-lS-em9" secondAttribute="trailing" constant="30" id="ybd-SF-5gy"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="263" y="633"/>
+            <point key="canvasLocation" x="265" y="648"/>
         </view>
     </objects>
 </document>
