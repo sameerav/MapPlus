@@ -12,7 +12,7 @@
 
 @interface MapViewController : UIViewController <GMSMapViewDelegate, CLLocationManagerDelegate>
 
-@property (strong, nonatomic) NSString *timeFilter;
-@property (strong, nonatomic) NSString *emotionFilter;
+@property (strong, nonatomic) NSString *dateFilter;
+@property (strong, nonatomic) NSMutableSet *emotionFilter;
 
 @end

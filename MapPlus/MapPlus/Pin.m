@@ -14,9 +14,9 @@
 // these properties are so parse can handle storing the pin
 @property float latitude;
 @property float longtitude;
-@property int red;
-@property int blue;
-@property int green;
+@property float red;
+@property float blue;
+@property float green;
 @end
 
 @implementation Pin
@@ -43,7 +43,7 @@
 
 - (instancetype)initWithUser:(NSNumber *)userID
                         date:(NSDate *)date
-                    location:(CLLocationCoordinate2D)position {
+                    location:(CLLocationCoordinate2D)coordinates {
     
     static dispatch_once_t once;
     dispatch_once(&once, ^ {
@@ -54,11 +54,11 @@
     if (self) {
         self.userID = userID;
         self.date = date;
-        self.position = position;
+        self.position = coordinates;
         
         // change the position into JSON Serializable objects for Parse
-        self.latitude = self.position.latitude;
-        self.longtitude = self.position.longitude;
+        self.latitude = coordinates.latitude;
+        self.longtitude = coordinates.longitude;
         
         NSDictionary *colorDict = @{[UIColor redColor]: @"red", [UIColor orangeColor]: @"orange", [UIColor yellowColor]:@"yellow", [UIColor greenColor]:@"green", [UIColor blueColor]:@"blue", [UIColor purpleColor]:@"purple"};
         self.colorString = colorDict[self.color];

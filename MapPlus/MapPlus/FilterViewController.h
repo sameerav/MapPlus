@@ -10,5 +10,6 @@
 @class MapViewController;
 
 @interface FilterViewController : UIViewController
-@property (weak, nonatomic) MapViewController *mvc;
+
+- (instancetype)initWithMVC:(MapViewController *)mvc;
 @end

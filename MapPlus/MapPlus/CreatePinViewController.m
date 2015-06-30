@@ -8,13 +8,14 @@
 
 #import "CreatePinViewController.h"
 #import "Pin.h"
-#import "ParseAPI.h"
 
 @interface CreatePinViewController ()
 
-@property CLLocationCoordinate2D location;
+@property (assign, nonatomic) CLLocationCoordinate2D location;
+@property (assign, nonatomic) BOOL tag;
+@property (strong, nonatomic) Pin *pin;
 
-- (Pin *)createPin;
+@property (weak, nonatomic) IBOutlet UITextView *textBox;
 
 @end
 
@@ -22,12 +23,19 @@
 
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)location {
     self = [super init];
+    
     if (self) {
+        
+        NSDate *date = [[NSDate alloc] init];
+        _pin = [[Pin alloc] initWithUser:0 date:date location:location];
         _location = location;
+        
+        
         UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                     target:self
                                                                                     action:@selector(cancelButtonPressed:)];
         self.navigationItem.leftBarButtonItem = cancelItem;
+        
         
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self
@@ -36,6 +44,7 @@
         
         self.navigationItem.title = @"Drop a New Pin";
     }
+    
     return self;
 }
 
@@ -49,62 +58,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)addRedPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor redColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addOrangePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor orangeColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addYellowPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor yellowColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addGreenPin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor greenColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addBluePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor blueColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addPurplePin:(id)sender {
-    Pin *pin = self.createPin;
-    pin.color = [UIColor purpleColor];
-    //[ParseAPI savePin:pin];
-    self.color = pin.color;
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)addPinButtonPressed:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    
+    NSDictionary *buttonMapping = @{@"Red - Angry"         : @"Angry",
+                                    @"Orange - Energetic"  : @"Energetic",
+                                    @"Yellow - Happy"      : @"Happy",
+                                    @"Green - Jealous"     : @"Jealous",
+                                    @"Blue - Sad"          : @"Sad",
+                                    @"Purple - Optimistic" : @"Optimistic"};
+    
+    self.pin.color = button.currentTitleColor;
+    self.pin.colorString = buttonMapping[button.currentTitle];
+    self.pin.text = self.textBox.text;
+    
+    [self dismissViewAndSave];
 }
 
 - (void)cancelButtonPressed:(id)sender {
@@ -112,17 +81,16 @@
 }
 
 - (void)doneButtonPressed:(id)sender {
+    [self dismissViewAndSave];
+}
+
+- (void)dismissViewAndSave
+{
     if (self.saveBlock) {
         self.saveBlock(self.pin);
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-}
-
-- (Pin *)createPin {
-    NSDate *date = [[NSDate alloc] init];
-    self.pin = [[Pin alloc] initWithUser:000000 date:date location:self.location];
-    return self.pin;
 }
 
 @end

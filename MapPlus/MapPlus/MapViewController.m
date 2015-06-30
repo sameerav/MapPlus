@@ -18,8 +18,6 @@
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) NSMutableSet *pins;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *endDate;
 
 @end
 
@@ -31,7 +29,14 @@
     self = [super init];
     
     if (self) {
-        self.pins = [NSMutableSet set];
+        _pins = [NSMutableSet set];
+        _dateFilter = @"";
+        _emotionFilter = [NSMutableSet setWithArray:@[@"Angry",
+                                                      @"Energetic",
+                                                      @"Happy",
+                                                      @"Jealous",
+                                                      @"Sad",
+                                                      @"Optimistic"]];
         
         self.navigationItem.title = @"MapPlus";
         
@@ -75,7 +80,6 @@
         // Set the mapType to a drawn representation
         mapView.mapType = kGMSTypeNormal;
         
-        
         self.mapView = mapView;
         self.view = mapView;
     }
@@ -86,7 +90,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self refreshPinsSet];
+    //[self refreshPinsSet];
 }
 
 - (void)viewDidLoad {
@@ -99,15 +103,13 @@
 {
     NSLog(@"Filter Pin Button Pressed");
     
-    FilterViewController *fvc = [[FilterViewController alloc] init];
-    fvc.mvc = self;
+    FilterViewController *fvc = [[FilterViewController alloc] initWithMVC:self];
     
     UINavigationController *nc =
     [[UINavigationController alloc] initWithRootViewController:fvc];
     nc.modalPresentationStyle = UIModalPresentationFormSheet;
     
     [self presentViewController:nc animated:YES completion:nil];
-    
 }
 
 - (void)refreshPinButtonPressed:(id)sender
@@ -140,7 +142,6 @@
 didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
     CreatePinViewController *cpvc = [[CreatePinViewController alloc] initWithLocation:coordinate];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
     cpvc.saveBlock = ^(Pin *pin){
         [self dismissViewControllerAnimated:YES completion:^{
@@ -148,11 +149,12 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
                 pin.pinMarker = [self createPinMarker:pin];
             }
             
-            // Store to Parse
-            
+            //[ParseAPI savePin:pin];
             [self.pins addObject:pin];
         }];
     };
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cpvc];
     
     [self presentViewController:nc animated:YES completion:nil];
 }
@@ -164,12 +166,12 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
     // Fetch pins from
     NSSet *newPins;
-    if (self.timeFilter) {
-        if ([self.timeFilter isEqualToString:@"day"]) {
+    if (self.dateFilter) {
+        if ([self.dateFilter isEqualToString:@"day"]) {
             newPins = [ParseAPI getPin24HoursOld];
-        } else if ([self.timeFilter isEqualToString:@"month"]) {
+        } else if ([self.dateFilter isEqualToString:@"month"]) {
             newPins = [ParseAPI getPinMonthOld];
-        } else if ([self.timeFilter isEqualToString:@"year"]){
+        } else if ([self.dateFilter isEqualToString:@"year"]){
             newPins = [ParseAPI getPinsYearOld];
         }
     } else {
@@ -177,7 +179,13 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     }
     if (self.emotionFilter) {
         [self.pins objectsPassingTest:^(id obj, BOOL *stop) {
-            NSDictionary *colorDict = @{@"red": [UIColor redColor], @"orange": [UIColor orangeColor], @"yellow": [UIColor yellowColor], @"green": [UIColor greenColor], @"blue": [UIColor blueColor], @"purple": [UIColor purpleColor]};
+            NSDictionary *colorDict = @{@"red"    : [UIColor redColor],
+                                        @"orange" : [UIColor orangeColor],
+                                        @"yellow" : [UIColor yellowColor],
+                                        @"green"  : [UIColor greenColor],
+                                        @"blue"   : [UIColor blueColor],
+                                        @"purple" : [UIColor purpleColor]};
+            
             if ([colorDict[self.emotionFilter] isEqual:((Pin *)obj).color]) {
                 return YES;
             } else {
@@ -207,6 +215,7 @@ didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
     GMSMarker *marker = [[GMSMarker alloc] init];
     
     marker.icon = [GMSMarker markerImageWithColor:pin.color];
+    marker.position = pin.position;
     marker.snippet = pin.text;
     marker.title = pin.colorString;
     marker.appearAnimation = kGMSMarkerAnimationPop;
